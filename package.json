@@ -1,6 +1,6 @@
 {
 	"name": "tad",
-	"version": "0.1.0",
+	"version": "0.0.0",
 	"description": "Run same tests with different engines",
 	"keywords": ["test", "factory", "unittests", "runner", "tests"],
 	"author": "Mariusz Nowak <medikoo+tad@medikoo.com> (http://www.medikoo.com/)",
@@ -12,11 +12,5 @@
 	"bugs": {
 		"mail": "medikoo+tad@medikoo.com",
 		"web": "https://github.com/medikoo/tad/issues"
-	},
-	"scripts": { "test": "node test" },
-	"dependencies": {
-		"es5-ext": "0.3.x",
-		"test": "0.4.x",
-		"expresso": "0.7.x"
 	}
 }
