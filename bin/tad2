@@ -13,4 +13,6 @@ var argv = require('optimist')
 
   , paths = argv._;
 
-suite(paths, { showAll: argv.a }).end();
+suite(paths.map(function (p) {
+	return (p.charAt(0) !== '/') ? process.env.PWD + '/' + p : p;
+}), { showAll: argv.a }).end();

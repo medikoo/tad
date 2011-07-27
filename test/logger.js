@@ -26,5 +26,5 @@ module.exports = function (t, a) {
 	a(ended, false, "Not ended");
 	t.end();
 	a(ended, true, "Ended");
-	a.deep(ondata, ['pass', 'foo', 'fail', 'bar', 'error', 'error']);
+	a.deep(ondata, ['pass', 'foo', 'fail', 'bar', 'error', 'error'], "Log");
 };
