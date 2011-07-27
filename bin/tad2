@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var argv = require('optimist')
+	.usage("Usage: $0 <paths>..."
+				 + ""
+				 + "Options:"
+				 + "-a  Display all tests names, including passed\n")
+	.boolean(['a'])
+	.demand(1).argv
+  , suite = require('../lib/suite')
+
+  , paths = argv._;
+
+suite(paths, { showAll: argv.a }).end();
