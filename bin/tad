@@ -9,13 +9,10 @@ var argv = require('optimist')
 				 + "-a  Display all tests names, including passed\n")
 	.boolean(['a'])
 	.demand(1).argv
-  , logger = require('../lib/logger/node')
-  , testPaths = require('../lib/test-paths')
+  , suite = require('../lib/suite')
 
   , paths = argv._;
 
-logger = logger(argv.a);
-
-testPaths(paths.map(function (p) {
+suite(paths.map(function (p) {
 	return (p.charAt(0) !== '/') ? process.env.PWD + '/' + p : p;
-}), logger).then(logger.summarize.bind(logger)).end();
+}), { showAll: argv.a }).end();
