@@ -3,11 +3,10 @@
 'use strict';
 
 var argv = require('optimist')
-	.usage("Usage: $0 <paths>..."
-				 + ""
-				 + "Options:"
-				 + "-a  Display all tests names, including passed\n")
-	.boolean(['a'])
+	.usage("Usage: $0 <options> <paths>...")
+	.boolean(['a', 'm'])
+	.describe('a', "Display all tests names, including passed")
+	.describe('m', "Minimise output, verbose only for fails or errors")
 	.demand(1).argv
   , suite = require('../lib/suite')
 
@@ -15,4 +14,4 @@ var argv = require('optimist')
 
 suite(paths.map(function (p) {
 	return (p.charAt(0) !== '/') ? process.env.PWD + '/' + p : p;
-}), { showAll: argv.a }).end();
+}), argv).end();
