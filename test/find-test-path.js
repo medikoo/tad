@@ -9,13 +9,13 @@ var path       = require('path')
 
 module.exports = {
 	"In lib": function (t, a, d) {
-		t(playground + '/lib/dir/file1.js').then(function (tpath) {
-			a(tpath, playground + '/test/dir/file1.js'); d();
+		t(playground + '/lib/dir/module.js').then(function (tpath) {
+			a(tpath, playground + '/test/dir/module.js'); d();
 		}, d).end();
 	},
 	"In main": function (t, a, d) {
-		t(playground + '/logger.js').then(function (tpath) {
-			a(tpath, playground + '/test/logger.js'); d();
+		t(playground + '/module.js').then(function (tpath) {
+			a(tpath, playground + '/test/module.js'); d();
 		}, d).end();
 	}
 };
