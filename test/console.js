@@ -14,7 +14,7 @@ module.exports = function (t, a) {
 		errl += data;
 	};
 
-	console = t();
+	console = t({});
 
 	console.pass('foo', 'bar');
 	results['Pass content'] = [outl.length > 0];
@@ -64,7 +64,7 @@ module.exports = function (t, a) {
 	results['No errors stdout'] = [errl.length, 0];
 	errl = '';
 
-	console = t(true);
+	console = t({ a: true });
 	console.pass('foo', 'bar');
 	results['Show all Pass content'] = [outl.length > 0];
 	results['Show all Pass lines'] = [outl.split('\n').length, 2];
