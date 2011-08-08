@@ -48,8 +48,6 @@ module.exports = function (t, a) {
 
 	console.fail('foo', 'bar', new AssertionError({
 		message: 'foo',
-		actual: 'foo',
-		expected: 'foo',
 		operator: 'throws'
 	}));
 	results['Fail throws content'] = [outl.length > 0];
