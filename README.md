@@ -72,10 +72,9 @@ which arguments should be passed to test function. Examples:
 
 * Synchronous test:
 
-
-	exports["Some tests"] = function (t, a) {
-		// tests
-	};
+		exports["Some tests"] = function (t, a) {
+			// tests
+		};
 
 Tests can be nested, and declared various ways (synchronous/asynchronous)
 
@@ -116,10 +115,9 @@ TAD adds some extra sugar to UncommonJS Assert object:
 
 * `a === a.equalStrict`, so you can write your assertions as:
 
-
-	a(shouldBeTrue, true, "It's true");
-	// it has same effect as:
-	a.equalStrict(shouldBeTrue, true, "It's true");
+		a(shouldBeTrue, true, "It's true");
+		// it has same effect as:
+		a.equalStrict(shouldBeTrue, true, "It's true");
 
 * `a.not` is an alias for `a.notStrictEqual`
 * `a.deep` is an alias for `a.deepEqual`
