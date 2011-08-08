@@ -1,10 +1,10 @@
 {
 	"name": "tad",
-	"version": "0.0.0",
-	"description": "Run same tests with different engines",
-	"keywords": ["test", "factory", "unittests", "runner", "tests"],
+	"version": "0.1.0",
+	"description": "Javascript test suite",
+	"keywords": ["test", "factory", "unit", "unittest", "runner", "tests", "tdd", "testing"],
 	"author": "Mariusz Nowak <medikoo+tad@medikoo.com> (http://www.medikoo.com/)",
-	"main": "lib/index",
+	"main": "lib/suite",
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/medikoo/tad.git"
@@ -12,5 +12,16 @@
 	"bugs": {
 		"mail": "medikoo+tad@medikoo.com",
 		"web": "https://github.com/medikoo/tad/issues"
+	},
+	"scripts": { "test": "bin/tad lib" },
+	"dependencies": {
+		"cli-color": "0.1.x",
+		"clock": "0.1.x",
+		"deferred": "0.2.x",
+		"es5-ext": "0.6.x",
+		"event-emitter": "0.1.x",
+		"next": "0.2.x",
+		"optimist": "0.2.x",
+		"test": "0.4.x"
 	}
 }
