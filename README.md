@@ -1,4 +1,4 @@
-# TAD - JavaScript unit test framework
+# TAD - JavaScript test suite
 
 Goal of this framework is to allow writing tests with minimal hassle.
 TAD will locate your test file, and provide tested module for your test functions.
@@ -24,13 +24,13 @@ TAD will locate your test file, and provide tested module for your test function
 <a name="usage-file-management" />
 ### File management
 
-Keep your code in 'lib' folder and tests in 'test' folder.
-For each file in in 'lib' folder have corresponding test file in 'test' folder.
+Keep your code in _lib_ folder and tests in _test_ folder.
+For each file in in _lib_ folder have corresponding test file in _test_ folder.
 
 <a name="usage-test-files" />
 ### Test files
 
-Tests should be written as set of functions, it could be just one function:
+Tests should be written as set of functions, it can be just one function:
 
 	module.exports = function (t, a, d) {
 		// tests
@@ -51,7 +51,7 @@ or many thematically grouped functions:
 Arguments passed to test functions are:
 * __t__ - Tested module
 * __a__ - Assert object
-* __d__ - 'Done' function, it's for tests that need to be run asynchronously.
+* __d__ - _Done_ function, it's for tests that need to be run asynchronously.
 You may pass additional block of tests to this
 function and they'll be run right after. __d__ makes no sense for synchrounous
 tests, declare such tests without it.
