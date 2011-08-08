@@ -49,6 +49,7 @@ or many thematically grouped functions:
 ### Test functions
 
 Arguments passed to test functions are:
+
 * __t__ - Tested module
 * __a__ - Assert object
 * __d__ - _Done_ function, it's for tests that need to be run asynchronously.
