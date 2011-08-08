@@ -62,14 +62,13 @@ which arguments should be passed to test function. Examples:
 
 * Asynchronous test:
 
-
-	exports["Some tests"] = funtcion (t, a, d) {
-		// tests
-		setTimeout(function () {
+		exports["Some tests"] = funtcion (t, a, d) {
 			// tests
-			d();
-		}, 100);
-	};
+			setTimeout(function () {
+				// tests
+				d();
+			}, 100);
+		};
 
 * Synchronous test:
 
