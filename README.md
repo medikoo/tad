@@ -54,13 +54,14 @@ Arguments passed to test functions are:
 * __a__ - Assert object
 * __d__ - _Done_ function, it's for tests that need to be run asynchronously.
 You may pass additional block of tests to this
-function and they'll be run right after. __d__ makes no sense for synchrounous
-tests, declare such tests without it.
+function and they'll be run right after. _d_ argument makes no sense for
+synchrounous tests, declare such tests without it.
 
 All arguments are optional, and by the way function is declared suite detect
 which arguments should be passed to test function. Examples:
 
 * Asynchronous test:
+
 
 	exports["Some tests"] = funtcion (t, a, d) {
 		// tests
@@ -71,6 +72,7 @@ which arguments should be passed to test function. Examples:
 	};
 
 * Synchronous test:
+
 
 	exports["Some tests"] = function (t, a) {
 		// tests
@@ -111,9 +113,10 @@ TAD uses assert object from [UncommonJS tests runner](https://github.com/Gozala/
 It's API is nearly same as of _assert_ that can be found in Node. Full spec is available at 
 https://github.com/kriskowal/uncommonjs/blob/master/tests/specification.md .
 
-TAD added some extra sugar to UncommonJS Assert object:
+TAD adds some extra sugar to UncommonJS Assert object:
 
 * `a === a.equalStrict`, so you can write your assertions as:
+
 
 	a(shouldBeTrue, true, "It's true");
 	// it has same effect as:
@@ -127,14 +130,13 @@ TAD added some extra sugar to UncommonJS Assert object:
 <a name="usage-running-tests" />
 ### Running tests
 
-Run your tests with provided binary:
+Test your file with provided binary:
 
 	$ bin/tad lib/test-file
 
 or test all files in path:
 
 	$ bin/tad lib
-
 
 <a name="todo" />
 ## TODO
