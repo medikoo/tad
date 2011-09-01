@@ -3,6 +3,8 @@
 Goal of this framework is to allow writing tests with minimal hassle.
 TAD will locate your test file, and provide tested module for your test functions.
 
+Example console output:
+<img src="http://medyk.org/tad.png" border="0" width="718" height="370" />
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -140,5 +142,6 @@ or test all files in path:
 
 * Full custom context support
 * Code coverage
+* TAP support
 * jslint, jshint as side validation option
 * Port tests to browsers
