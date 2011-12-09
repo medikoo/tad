@@ -8,16 +8,11 @@ var argv = require('optimist')
 	.describe('a', "Display all tests names, including passed")
 	.describe('m', "Minimise output, verbose only for fails or errors")
 	.demand(1).argv
-  , pwd  = require('next/lib/pwd')
   , suite = require('../lib/suite')
 
   , paths = argv._;
 
-pwd(function (err, pwd) {
-	if (err) {
-		throw err;
-	}
-	suite(paths.map(function (p) {
-		return (p.charAt(0) !== '/') ? pwd + '/' + p : p;
-	}), argv).end();
-});
+suite(paths.map(function (p) {
+	return (p.charAt(0) !== '/') ? process.cwd() + '/' + p : p;
+}), argv).end();
+
