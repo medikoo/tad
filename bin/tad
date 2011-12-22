@@ -14,4 +14,9 @@ var argv = require('optimist')
 
 suite(paths.map(function (p) {
 	return (p.charAt(0) !== '/') ? process.env.PWD + '/' + p : p;
-}), argv).end();
+}), argv)
+(function (suite) {
+	var c = suite.console;
+	process.exit(c.errored ? 2 : (c.failed ? 1 : 0));
+})
+.end();
