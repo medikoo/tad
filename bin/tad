@@ -13,7 +13,7 @@ var argv = require('optimist')
   , paths = argv._;
 
 suite(paths.map(function (p) {
-	return (p.charAt(0) !== '/') ? process.env.PWD + '/' + p : p;
+	return (p.charAt(0) !== '/') ? process.cwd() + '/' + p : p;
 }), argv)
 (function (suite) {
 	var c = suite.console;
