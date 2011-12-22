@@ -1,2 +1,5 @@
+v0.1.1  --  2011.12.22
+* Custom scopes are now searched up tree
+
 v0.1.0  --  2011.08.08
 * Initial version

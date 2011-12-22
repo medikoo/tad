@@ -1,6 +1,6 @@
 {
 	"name": "tad",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Javascript test suite",
 	"keywords": ["test", "factory", "unit", "unittest", "runner", "tests", "tdd", "testing"],
 	"author": "Mariusz Nowak <medikoo+tad@medikoo.com> (http://www.medikoo.com/)",
@@ -11,7 +11,7 @@
 	},
 	"bugs": {
 		"mail": "medikoo+tad@medikoo.com",
-		"web": "https://github.com/medikoo/tad/issues"
+		"url": "https://github.com/medikoo/tad/issues"
 	},
 	"scripts": { "test": "bin/tad lib" },
 	"dependencies": {
