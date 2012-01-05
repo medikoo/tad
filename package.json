@@ -1,7 +1,7 @@
 {
 	"name": "tad",
 	"version": "0.1.4",
-	"description": "Javascript test suite",
+	"description": "JavaScript test suite",
 	"keywords": ["test", "factory", "unit", "unittest", "runner", "tests", "tdd", "testing"],
 	"author": "Mariusz Nowak <medikoo+tad@medikoo.com> (http://www.medikoo.com/)",
 	"main": "lib/suite",
