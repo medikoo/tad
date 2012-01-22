@@ -1,9 +1,9 @@
 SHELL = bash
 
 install:
-	npm install
+	npm install --dev
 
 test:
-	./bin/tad lib
+	npm test
 
 .PHONY: install test
