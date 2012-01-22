@@ -7,7 +7,7 @@ module.exports = {
 		t('ignore', pg + '/test/module.js')
 		(function (context) {
 			a(context, global); d();
-		}, d).end();
+		}).end(d);
 	},
 	"Custom": {
 		"": function (t, a, d) {

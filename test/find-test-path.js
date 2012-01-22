@@ -1,6 +1,7 @@
 'use strict';
 
 var path       = require('path')
+  , normalize  = require('next/lib/path/normalize')
   , playground = __dirname + '/__playground'
   , file       = playground + '/lib/dir/file1.js'
   , dir        = playground + '/lib/dir/'
@@ -9,13 +10,13 @@ var path       = require('path')
 
 module.exports = {
 	"In lib": function (t, a, d) {
-		t(playground + '/lib/dir/module.js').then(function (tpath) {
-			a(tpath, playground + '/test/dir/module.js'); d();
+		t(normalize(playground + '/lib/dir/module.js')).then(function (tpath) {
+			a(tpath, normalize(playground + '/test/dir/module.js')); d();
 		}, d).end();
 	},
 	"In main": function (t, a, d) {
-		t(playground + '/module.js').then(function (tpath) {
-			a(tpath, playground + '/test/module.js'); d();
+		t(normalize(playground + '/module.js')).then(function (tpath) {
+			a(tpath, normalize(playground + '/test/module.js')); d();
 		}, d).end();
 	}
 };
