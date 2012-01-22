@@ -1,3 +1,8 @@
+v0.1.5  --  2012.01.22
+* Better diff on deep asserts error notifications
+* Update dependencies to newest version
+* Travis CI configuration
+
 v0.1.4  --  2012.01.05
 * Index test now accepts ignores list
 
