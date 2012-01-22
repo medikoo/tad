@@ -1,8 +1,9 @@
 {
 	"name": "tad",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "JavaScript test suite",
-	"keywords": ["test", "factory", "unit", "unittest", "runner", "tests", "tdd", "testing"],
+	"keywords": ["test", "factory", "unit", "unittest", "runner", "tests", "tdd",
+		"testing"],
 	"author": "Mariusz Nowak <medikoo+tad@medikoo.com> (http://www.medikoo.com/)",
 	"main": "lib/suite",
 	"repository": {
@@ -13,12 +14,14 @@
 		"mail": "medikoo+tad@medikoo.com",
 		"url": "https://github.com/medikoo/tad/issues"
 	},
-	"scripts": { "test": "bin/tad lib" },
+	"scripts": {
+		"test": "node ./bin/tad lib"
+	},
 	"dependencies": {
 		"cli-color": "0.1.x",
 		"clock": "0.1.x",
-		"deferred": "0.2.x",
-		"es5-ext": "0.6.x",
+		"deferred": "0.4.x",
+		"es5-ext": "0.7.x",
 		"event-emitter": "0.1.x",
 		"next": "0.2.x",
 		"optimist": "0.2.x",
