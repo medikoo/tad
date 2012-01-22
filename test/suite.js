@@ -1,7 +1,13 @@
 'use strict';
 
-var pg = __dirname + '/__playground';
+var pg = __dirname + '/__playground'
+  , n4 = (process.version.indexOf('v0.4') === 0);
+
 module.exports = function (t, a, d) {
+	if (!n4) {
+		d();
+		return;
+	}
 	var outorg, errorg, outl = '', errl = '',  console, results = {};
 	outorg = process.stdout._writeOut;
 	errorg = process.stderr._writeOut;

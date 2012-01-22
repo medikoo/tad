@@ -1,9 +1,13 @@
 'use strict';
 
 var AssertionError = require('test/assert').AssertionError
-  , oForEach = require('es5-ext/lib/Object/plain/for-each').call;
+  , oForEach = require('es5-ext/lib/Object/prototype/for-each')
+  , n4 = (process.version.indexOf('v0.4') === 0);
 
 module.exports = function (t, a) {
+	if (!n4) {
+		return;
+	}
 	var outorg, errorg, outl = '', errl = '',  console, results = {};
 	outorg = process.stdout._writeOut;
 	errorg = process.stderr._writeOut;
@@ -81,7 +85,7 @@ module.exports = function (t, a) {
 	process.stdout._writeOut = outorg;
 	process.stderr._writeOut = errorg;
 
-	oForEach(results, function (r, name) {
+	oForEach.call(results, function (r, name) {
 		if (r.length === 1) {
 			a.ok(r[0], name);
 		} else {
