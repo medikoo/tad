@@ -7,8 +7,8 @@ module.exports = function (t, a) {
 	t(true, true, 'foo');
 	t.ok(false, 'bar');
 	t.not(false, true, 'not');
-	t.deep([1,2], [1, 2], 'deep');
-	t.notDeep([1,2], [2, 1], 'not deep');
+	t.deep([1, 2], [1, 2], 'deep');
+	t.notDeep([1, 2], [2, 1], 'not deep');
 
 	a.deep([logger[0].type, logger[0].data], ['pass', 'foo']);
 	a.deep([logger[1].type, logger[1].data.message], ['fail', 'bar']);

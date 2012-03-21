@@ -8,7 +8,7 @@ var argv = require('optimist')
 	.describe('a', "Display all tests names, including passed")
 	.describe('m', "Minimise output, verbose only for fails or errors").argv
 
-  , suite = require('../lib/suite')
+  , suite = require('../lib/suite');
 
 suite(argv._.length ? argv._ : ['.'], argv)(function (suite) {
 	var c = suite.console;

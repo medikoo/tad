@@ -4,9 +4,9 @@ var findTestPath = require('../lib/find-test-path')
   , pg = __dirname + '/__playground/lib/';
 
 module.exports = function (t, a, d) {
-	var paths = [pg + 'module.js', '/wrong/path', pg + 'dir'];
-	var l = t(paths)
-	  , data = [];
+	var l, data, paths = [pg + 'module.js', '/wrong/path', pg + 'dir'];
+	l = t(paths);
+	data = [];
 	l('data', function () {
 		data.push(arguments);
 	});
@@ -18,8 +18,8 @@ module.exports = function (t, a, d) {
 				a(o[1], paths[0], "File");
 				a(o[3], global, "Context");
 				findTestPath(o[1])(function (p) {
-					a(p, o[2], "Test path"); d();
-				}, d).end();
+					a(p, o[2], "Test path");
+				}).end(d);
 			},
 			"Wrong path": function () {
 				var o = data[1];
@@ -35,16 +35,16 @@ module.exports = function (t, a, d) {
 						a(o[0], paths[2], "Path");
 						a(o[3], global, "Context");
 						findTestPath(o[1])(function (p) {
-							a(p, o[2], "Test path"); d();
-						}, d).end();
+							a(p, o[2], "Test path");
+						}).end(d);
 					},
 					"File #2": function (t, a, d) {
 						var o = data[5];
 						a(o[0], paths[2], "Path");
 						a(o[3], global, "Context");
 						findTestPath(o[1])(function (p) {
-							a(p, o[2], "Test path"); d();
-						}, d).end();
+							a(p, o[2], "Test path");
+						}).end(d);
 					}
 				};
 			}

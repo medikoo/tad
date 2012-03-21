@@ -11,12 +11,12 @@ var path       = require('path')
 module.exports = {
 	"In lib": function (t, a, d) {
 		t(normalize(playground + '/lib/dir/module.js')).then(function (tpath) {
-			a(tpath, normalize(playground + '/test/dir/module.js')); d();
-		}, d).end();
+			a(tpath, normalize(playground + '/test/dir/module.js'));
+		}).end(d);
 	},
 	"In main": function (t, a, d) {
 		t(normalize(playground + '/module.js')).then(function (tpath) {
-			a(tpath, normalize(playground + '/test/module.js')); d();
-		}, d).end();
+			a(tpath, normalize(playground + '/test/module.js'));
+		}).end(d);
 	}
 };
