@@ -6,17 +6,11 @@ var argv = require('optimist')
 	.usage("Usage: $0 <options> <paths>...")
 	.boolean(['a', 'm'])
 	.describe('a', "Display all tests names, including passed")
-	.describe('m', "Minimise output, verbose only for fails or errors")
-	.demand(1).argv
+	.describe('m', "Minimise output, verbose only for fails or errors").argv
+
   , suite = require('../lib/suite')
 
-  , paths = argv._;
-
-suite(paths.map(function (p) {
-	return (p.charAt(0) !== '/') ? process.cwd() + '/' + p : p;
-}), argv)
-(function (suite) {
+suite(argv._.length ? argv._ : ['.'], argv)(function (suite) {
 	var c = suite.console;
 	process.exit(c.errored ? 2 : (c.failed ? 1 : 0));
-})
-.end();
+}).end();
