@@ -1,6 +1,6 @@
 {
 	"name": "tad",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"description": "JavaScript test suite",
 	"keywords": ["test", "factory", "unit", "unittest", "runner", "tests", "tdd",
 		"testing"],

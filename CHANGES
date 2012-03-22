@@ -1,3 +1,10 @@
+v0.1.6  --  2012.03.22
+Fixes:
+* Correct input paths handling (should be bulletproof on both *nix and windows)
+
+Improvements:
+* JSLint code validation
+
 v0.1.5  --  2012.01.22
 * Better diff on deep asserts error notifications
 * Update dependencies to newest version
