@@ -18,6 +18,9 @@
 		"test": "node ./bin/tad lib",
 		"lint": "node ./node_modules/jslint/bin/jslint.js --color --git"
 	},
+  "bin": {
+    "tad": "./bin/tad"
+  },
 	"dependencies": {
 		"cli-color": "0.1.x",
 		"clock": "0.1.x",
