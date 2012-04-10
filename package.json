@@ -1,31 +1,39 @@
 {
-	"name": "tad",
-	"version": "0.1.6",
-	"description": "JavaScript test suite",
-	"keywords": ["test", "factory", "unit", "unittest", "runner", "tests", "tdd",
-		"testing"],
-	"author": "Mariusz Nowak <medikoo+tad@medikoo.com> (http://www.medikoo.com/)",
-	"main": "lib/suite",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/medikoo/tad.git"
-	},
-	"bugs": {
-		"mail": "medikoo+tad@medikoo.com",
-		"url": "https://github.com/medikoo/tad/issues"
-	},
-	"scripts": {
-		"test": "node ./bin/tad lib",
-		"lint": "node ./node_modules/jslint/bin/jslint.js --color --git"
-	},
-	"dependencies": {
-		"cli-color": "0.1.x",
-		"clock": "0.1.x",
-		"deferred": "0.4.x",
-		"es5-ext": "git://github.com/medikoo/es5-ext.git",
-		"event-emitter": "0.1.x",
-		"next": "0.2.x",
-		"optimist": "0.3.x",
-		"test": "0.4.x"
-	}
+  "name": "tad",
+  "version": "0.1.6",
+  "description": "JavaScript test suite",
+  "keywords": [
+    "test",
+    "factory",
+    "unit",
+    "unittest",
+    "runner",
+    "tests",
+    "tdd",
+    "testing"
+  ],
+  "author": "Mariusz Nowak <medikoo+tad@medikoo.com> (http://www.medikoo.com/)",
+  "main": "lib/suite",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/medikoo/tad.git"
+  },
+  "bugs": {
+    "mail": "medikoo+tad@medikoo.com",
+    "url": "https://github.com/medikoo/tad/issues"
+  },
+  "scripts": {
+    "test": "node ./bin/tad lib",
+    "lint": "node ./node_modules/jslint/bin/jslint.js --color --git"
+  },
+  "dependencies": {
+    "cli-color": "0.1.x",
+    "clock": "0.1.x",
+    "deferred": "0.4.x",
+    "es5-ext": "git://github.com/medikoo/es5-ext.git",
+    "event-emitter": "0.1.x",
+    "next": "0.2.x",
+    "optimist": "0.3.x",
+    "test": "0.4.x"
+  }
 }
