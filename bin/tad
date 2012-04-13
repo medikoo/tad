@@ -12,5 +12,7 @@ var argv = require('optimist')
 
 suite(argv._.length ? argv._ : ['.'], argv)(function (suite) {
 	var c = suite.console;
-	process.exit(c.errored ? 2 : (c.failed ? 1 : 0));
+	process.on('exit', function () {
+		process.exit(c.errored ? 2 : (c.failed ? 1 : 0));
+	});
 }).end();
