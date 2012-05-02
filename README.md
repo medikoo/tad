@@ -116,11 +116,11 @@ https://github.com/kriskowal/uncommonjs/blob/master/tests/specification.md .
 
 TAD adds some extra sugar to UncommonJS Assert object:
 
-* `a === a.equalStrict`, so you can write your assertions as:
+* `a === a.strictEqual`, so you can write your assertions as:
 
 		a(shouldBeTrue, true, "It's true");
 		// it has same effect as:
-		a.equalStrict(shouldBeTrue, true, "It's true");
+		a.strictEqual(shouldBeTrue, true, "It's true");
 
 * `a.not` is an alias for `a.notStrictEqual`
 * `a.deep` is an alias for `a.deepEqual`
