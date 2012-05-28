@@ -1,3 +1,7 @@
+v0.1.8  --  2012.05.28
+* Do not allow install on pre v0.6.6 Node.js version
+* Configure binary as binary in package.json
+
 v0.1.7  --  2012.05.28
 * Fix name (from path) resolution
 * npm friendly package.json
