@@ -23,8 +23,7 @@
     "url": "https://github.com/medikoo/tad/issues"
   },
   "scripts": {
-    "test": "node ./bin/tad lib",
-    "lint": "node ./node_modules/jslint/bin/jslint.js --color --git"
+    "test": "node ./bin/tad lib"
   },
   "dependencies": {
     "cli-color": "0.1.x",
