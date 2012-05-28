@@ -19,7 +19,7 @@
     "url": "git://github.com/medikoo/tad.git"
   },
   "bugs": {
-    "mail": "medikoo+tad@medikoo.com",
+    "email": "medikoo+tad@medikoo.com",
     "url": "https://github.com/medikoo/tad/issues"
   },
   "scripts": {
@@ -35,5 +35,10 @@
     "next": "0.2.x",
     "optimist": "0.3.x",
     "test": "0.4.x"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">=0.6.6"
   }
 }
