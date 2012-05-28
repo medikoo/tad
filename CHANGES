@@ -1,3 +1,11 @@
+v0.1.7  --  2012.05.28
+* Fix name (from path) resolution
+* npm friendly package.json
+* Exit process at actual process exit (before we forced exit of process right
+  after tests were completed, that forced exit not finished background
+  processes)
+* Update es5-ext to latest (v0.8) version
+
 v0.1.6  --  2012.03.22
 Fixes:
 * Correct input paths handling (should be bulletproof on both *nix and windows)
