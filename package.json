@@ -13,6 +13,9 @@
     "testing"
   ],
   "author": "Mariusz Nowak <medikoo+tad@medikoo.com> (http://www.medikoo.com/)",
+  "bin": {
+    "tad": "./bin/tad"
+  },
   "main": "lib/suite",
   "repository": {
     "type": "git",
