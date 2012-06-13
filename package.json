@@ -31,7 +31,7 @@
   "dependencies": {
     "cli-color": "0.1.x",
     "clock": "0.1.x",
-    "deferred": "0.4.x",
+    "deferred": "0.5.x",
     "duration": "0.1.x",
     "es5-ext": "0.8.x",
     "event-emitter": "0.1.x",
