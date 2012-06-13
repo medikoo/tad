@@ -1,3 +1,6 @@
+v0.1.9  --  2012.06.13
+* Depend on v0.5 release of deferred
+
 v0.1.8  --  2012.05.28
 * Do not allow install on pre v0.6.6 Node.js version
 * Configure binary as binary in package.json
