@@ -1,3 +1,7 @@
+v0.1.10  --  2012.08.06
+* Removed descriptor usage from logger, it caused error on Node v0.6
+  in v0.2 branch of event-emitter package (V8 bug)
+
 v0.1.9  --  2012.06.13
 * Depend on v0.5 release of deferred
 
