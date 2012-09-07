@@ -2,6 +2,8 @@
 
 'use strict';
 
+Error.stackTraceLimit = Infinity;
+
 var argv = require('optimist')
 	.usage("Usage: $0 <options> <paths>...")
 	.boolean(['a', 'm'])
