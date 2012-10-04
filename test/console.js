@@ -1,7 +1,8 @@
 'use strict';
 
-var AssertionError = require('test/assert').AssertionError
-  , oForEach = require('es5-ext/lib/Object/for-each')
+var oForEach       = require('es5-ext/lib/Object/for-each')
+  , AssertionError = require('test/assert').AssertionError
+
   , n4 = (process.version.indexOf('v0.4') === 0);
 
 module.exports = function (t, a) {

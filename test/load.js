@@ -1,7 +1,8 @@
 'use strict';
 
-var pg = __dirname + '/__playground'
-  , resolve = require('path').resolve;
+var resolve = require('path').resolve
+
+  , pg = __dirname + '/__playground';
 
 module.exports = function (t, a) {
 	var o = t(pg + '/lib/evaluation-error.js', pg + '/not/existing/path', global);
