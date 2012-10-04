@@ -29,19 +29,20 @@
     "test": "node ./bin/tad lib"
   },
   "dependencies": {
-    "cli-color": "0.1.x",
+    "cli-color": "0.2.x",
     "clock": "0.1.x",
-    "deferred": "0.5.x",
+    "deferred": "0.6.x",
     "duration": "0.1.x",
-    "es5-ext": "0.8.x",
-    "event-emitter": "0.1.x",
-    "next": "0.2.x",
+    "es5-ext": "0.9.x",
+    "event-emitter": "0.2.x",
+    "fs2": "0.1.x",
+    "next": "0.3.x",
     "optimist": "0.3.x",
     "test": "0.4.x"
   },
   "devDependencies": {},
   "optionalDependencies": {},
   "engines": {
-    "node": ">=0.6.6"
+    "node": ">=0.8"
   }
 }
