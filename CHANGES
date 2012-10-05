@@ -1,3 +1,11 @@
+v0.1.11  --  2012.10.04
+* Maintanance:
+  * Update to latest versions of dependencies
+  * Convention and lint cleanup
+* Print long stack traces on error
+* When testing index content do not take into account directories
+  staring with '_'
+
 v0.1.10  --  2012.08.06
 * Removed descriptor usage from logger, it caused error on Node v0.6
   in v0.2 branch of event-emitter package (V8 bug)
