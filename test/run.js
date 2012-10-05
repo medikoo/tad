@@ -48,7 +48,7 @@ module.exports = function (t, a, d) {
 				});
 			});
 		},
-		"Sync nested": function (x, y) {
+		"Sync nested": function () {
 			a.ok(!inProgress, "Sync nested: Progress");
 			inProgress = true;
 			a.deep(logger.msg.copy(), ['Sync nested'], "Sync nested: Name");
@@ -62,7 +62,7 @@ module.exports = function (t, a, d) {
 			};
 		},
 		"Nested": {
-			"in nested": function (x, y) {
+			"in nested": function () {
 				a.ok(!inProgress, "Nested: Progress");
 				inProgress = true;
 				a.deep(logger.msg.copy(), ['Nested', 'in nested'], "Nested: Name");

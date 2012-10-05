@@ -8,7 +8,7 @@ module.exports = function (t, a, d) {
 		d();
 		return;
 	}
-	var outorg, errorg, outl = '', errl = '',  console, results = {};
+	var outorg, errorg, outl = '', errl = '';
 	outorg = process.stdout._writeOut;
 	errorg = process.stderr._writeOut;
 	process.stdout._writeOut = function (data) {

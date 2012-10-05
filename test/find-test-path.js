@@ -1,10 +1,8 @@
 'use strict';
 
-var resolve    = require('path').resolve
+var resolve = require('path').resolve
 
-  , playground = __dirname + '/__playground'
-  , file = playground + '/lib/dir/file1.js', dir = playground + '/lib/dir/'
-  , dir2 = playground + '/lib/dir', subdir = playground + '/lib/dir/subdir/';
+  , playground = __dirname + '/__playground';
 
 module.exports = {
 	"In lib": function (t, a, d) {
