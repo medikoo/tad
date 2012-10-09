@@ -7,7 +7,7 @@ var resolve = require('path').resolve
 module.exports = function (t, a) {
 	var o = t(pg + '/lib/evaluation-error.js', pg + '/not/existing/path', global);
 	a.ok(o.testee instanceof Error, "Evaluation error");
-	a(o.test, null, "Not found");
+	a(o.test, undefined, "Not found");
 
 	o = t(resolve(pg, 'lib/index-test/index.js'),
 		resolve(pg, 'not/existing/path'), global);
