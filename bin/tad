@@ -5,7 +5,7 @@
 Error.stackTraceLimit = Infinity;
 
 var argv = require('optimist')
-	.usage("Usage: $0 <options> <paths>...")
+	.usage("Usage: $0 [options] [paths]")
 	.boolean(['a', 'm'])
 	.describe('a', "Display all tests names, including passed")
 	.describe('m', "Minimise output, verbose only for fails or errors").argv
