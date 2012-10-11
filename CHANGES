@@ -1,5 +1,8 @@
+v0.1.12  --  2012.10.11
+* Support modules that export `null`
+
 v0.1.11  --  2012.10.04
-* Maintanance:
+* Maintenance:
   * Update to latest versions of dependencies
   * Convention and lint cleanup
 * Print long stack traces on error

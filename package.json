@@ -1,6 +1,6 @@
 {
   "name": "tad",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "JavaScript test suite",
   "keywords": [
     "test",
@@ -36,7 +36,7 @@
     "es5-ext": "0.9.x",
     "event-emitter": "0.2.x",
     "fs2": "0.1.x",
-    "next": "0.3.x",
+    "next": "~0.3.1",
     "optimist": "0.3.x",
     "test": "0.4.x"
   },
