@@ -32,3 +32,6 @@ jshint.smarttabs
 jshint.eqnull
 jshint.expr
 jshint.global+ process, global, __dirname
+
+jslint_medikoo.predef+ console
+jshint.global+ console
