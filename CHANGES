@@ -1,3 +1,6 @@
+v0.1.13  --  2013.01.10
+* Ignore test folder if tad run on main package folder
+
 v0.1.12  --  2012.10.11
 * Support modules that export `null`
 
