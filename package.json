@@ -28,6 +28,9 @@
   "scripts": {
     "test": "node ./bin/tad lib"
   },
+  "engines": {
+    "node": ">=0.8"
+  },
   "dependencies": {
     "cli-color": "~0.2.1",
     "clock": "0.1.x",
@@ -41,8 +44,5 @@
     "test": "0.4.x"
   },
   "devDependencies": {},
-  "optionalDependencies": {},
-  "engines": {
-    "node": ">=0.8"
-  }
+  "licence": "MIT"
 }
