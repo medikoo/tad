@@ -12,7 +12,6 @@ jslint_medikoo.predef process, global, __dirname
 
 jshint.laxcomma
 jshint.camelcase
-jshint.curly
 jshint.eqeqeq
 jshint.forin
 jshint.immed
