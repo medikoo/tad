@@ -1,3 +1,8 @@
+v0.1.14  --  2013.03.11
+* Support error.code in assert.throws
+* Add missing licence file
+* Fix error stringification for console output
+
 v0.1.13  --  2013.01.10
 * Ignore test folder if tad run on main package folder
 
