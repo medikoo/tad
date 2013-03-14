@@ -1,3 +1,6 @@
+v0.1.15  --  2013.03.14
+* Fix path resolution (bug exposed with Node v0.10)
+
 v0.1.14  --  2013.03.11
 * Support error.code in assert.throws
 * Add missing licence file
