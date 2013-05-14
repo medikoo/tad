@@ -4,17 +4,51 @@
 
 Error.stackTraceLimit = Infinity;
 
-var argv = require('optimist')
+var compact  = require('es5-ext/lib/Array/prototype/compact')
+  , flatten  = require('es5-ext/lib/Array/prototype/flatten')
+  , deferred = require('deferred')
+  , path     = require('path')
+  , findRoot = require('next/lib/module/find-package-root')
+  , readdir  = require('fs2/lib/readdir')
+  , stat     = require('fs2/lib/stat')
+
+  , argv = require('optimist')
 	.usage("Usage: $0 [options] [paths]")
 	.boolean(['a', 'm'])
 	.describe('a', "Display all tests names, including passed")
 	.describe('m', "Minimise output, verbose only for fails or errors").argv
 
+  , extname = path.extname, resolve = path.resolve
   , suite = require('../lib/suite');
 
-suite(argv._.length ? argv._ : ['.'], argv)(function (suite) {
-	var c = suite.console;
-	process.on('exit', function () {
-		process.exit(c.errored ? 2 : (c.failed ? 1 : 0));
+if (!argv._.length) argv._ = ['.'];
+
+deferred.map(argv._, function (path) {
+	if (path !== '.') return path;
+	path = resolve('.');
+	return findRoot(resolve(path, 'x'))(function (root) {
+		if (root !== path) return path;
+		return readdir(path, { type: { file: true, directory: true } } )
+			.map(function (name) {
+				var filename = resolve(path, name);
+				return stat(resolve(path, name))(function (stats) {
+					if (stats.isDirectory()) {
+						if (name === 'node_modules') return null;
+						if (name === 'bin') return null;
+						if (name === 'test') return null;
+						return filename;
+					} else if (extname(name) === '.js') {
+						return filename;
+					}
+					return null;
+				});
+			}).invoke(compact);
+	});
+})(function (paths) {
+	return suite(flatten.call(paths), argv)(function (suite) {
+		var c = suite.console;
+		process.on('exit', function () {
+			process.exit(c.errored ? 2 : (c.failed ? 1 : 0));
+		});
 	});
 }).end();
