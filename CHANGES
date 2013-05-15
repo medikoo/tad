@@ -1,3 +1,6 @@
+v0.1.16  --  2013.05.15
+* Smart resolution of testable modules if TAD run on main package folder
+
 v0.1.15  --  2013.03.14
 * Fix path resolution (bug exposed with Node v0.10)
 
