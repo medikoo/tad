@@ -23,13 +23,15 @@ var compact  = require('es5-ext/lib/Array/prototype/compact')
 
 if (!argv._.length) argv._ = ['.'];
 
+require('../lib/_tad-ignore-mode');
+
 deferred.map(argv._, function (path) {
 	if (path !== '.') return path;
 	path = resolve('.');
 	return findRoot(resolve(path, 'x'))(function (root) {
 		if (root !== path) return path;
-		return readdir(path, { type: { file: true, directory: true } })
-			.map(function (name) {
+		return readdir(path, { type: { file: true, directory: true },
+			ignoreRules: 'tad' }).map(function (name) {
 				var filename = resolve(path, name);
 				return stat(resolve(path, name))(function (stats) {
 					if (stats.isDirectory()) {
