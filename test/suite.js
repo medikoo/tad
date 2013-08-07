@@ -8,15 +8,11 @@ module.exports = function (t, a, d) {
 		d();
 		return;
 	}
-	var outorg, errorg, outl = '', errl = '';
+	var outorg, errorg;
 	outorg = process.stdout._writeOut;
 	errorg = process.stderr._writeOut;
-	process.stdout._writeOut = function (data) {
-		outl += data;
-	};
-	process.stderr._writeOut = function (data) {
-		errl += data;
-	};
+	process.stdout._writeOut = function (data) {};
+	process.stderr._writeOut = function (data) {};
 
 	t([
 		'/wrong/path',

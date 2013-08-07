@@ -32,19 +32,18 @@ deferred.map(argv._, function (path) {
 		if (root !== path) return path;
 		return readdir(path, { type: { file: true, directory: true },
 			ignoreRules: 'tad' }).map(function (name) {
-				var filename = resolve(path, name);
-				return stat(resolve(path, name))(function (stats) {
-					if (stats.isDirectory()) {
-						if (name === 'node_modules') return null;
-						if (name === 'bin') return null;
-						if (name === 'test') return null;
-						return filename;
-					} else if (extname(name) === '.js') {
-						return filename;
-					}
-					return null;
-				});
-			}).invoke(compact);
+			var filename = resolve(path, name);
+			return stat(resolve(path, name))(function (stats) {
+				if (stats.isDirectory()) {
+					if (name === 'node_modules') return null;
+					if (name === 'bin') return null;
+					if (name === 'test') return null;
+					return filename;
+				}
+				if (extname(name) === '.js') return filename;
+				return null;
+			});
+		}).invoke(compact);
 	});
 })(function (paths) {
 	return suite(flatten.call(paths), argv)(function (suite) {
