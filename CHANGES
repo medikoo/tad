@@ -1,3 +1,11 @@
+v0.1.17  --  2013.08.08
+* Fix context in smart index tests
+* Ignore rules handling (provided via .testignore files)
+* Ignore specific (test, node_modules etc.) folders in index resolution
+* Fix leading path resolution (minor)
+* Internal logic improvements
+* Lint cleanup
+
 v0.1.16  --  2013.05.15
 * Smart resolution of testable modules if TAD run on main package folder
 
