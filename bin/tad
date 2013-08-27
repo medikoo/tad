@@ -4,8 +4,8 @@
 
 Error.stackTraceLimit = Infinity;
 
-var compact  = require('es5-ext/lib/Array/prototype/compact')
-  , flatten  = require('es5-ext/lib/Array/prototype/flatten')
+var compact  = require('es5-ext/array/#/compact')
+  , flatten  = require('es5-ext/array/#/flatten')
   , deferred = require('deferred')
   , path     = require('path')
   , findRoot = require('next/lib/module/find-package-root')

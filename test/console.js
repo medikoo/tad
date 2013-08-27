@@ -1,6 +1,6 @@
 'use strict';
 
-var oForEach       = require('es5-ext/lib/Object/for-each')
+var oForEach       = require('es5-ext/object/for-each')
   , AssertionError = require('test/assert').AssertionError
 
   , n4 = (process.version.indexOf('v0.4') === 0);

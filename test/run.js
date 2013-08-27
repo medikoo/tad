@@ -1,6 +1,6 @@
 'use strict';
 
-var id           = require('es5-ext/lib/Function/i')
+var id           = require('es5-ext/function/i')
   , createLogger = require('../lib/logger')
   , createAssert = require('../lib/assert');
 

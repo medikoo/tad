@@ -1,6 +1,6 @@
 'use strict';
 
-var CustomError = require('es5-ext/lib/Error/custom')
+var CustomError = require('es5-ext/error/custom')
   , logger      = require('../lib/logger')();
 
 module.exports = function (t, a) {
