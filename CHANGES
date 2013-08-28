@@ -1,3 +1,7 @@
+v0.1.18  --  2013.08.28
+* Fix optional context handling in indexTest
+* Better error reporting in case of not compliant text configurations
+
 v0.1.17  --  2013.08.08
 * Fix context in smart index tests
 * Ignore rules handling (provided via .testignore files)
