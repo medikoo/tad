@@ -1,3 +1,7 @@
+v0.1.19  --  2013.09.02
+* Workaround for [test package issue](https://github.com/Gozala/test-commonjs/pull/8)
+  of no support for Object.create(null) objects
+
 v0.1.18  --  2013.08.28
 * Fix optional context handling in indexTest
 * Better error reporting in case of not compliant text configurations
