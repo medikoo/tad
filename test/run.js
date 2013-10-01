@@ -18,7 +18,7 @@ module.exports = function (t, a, d) {
 			y(x(o), o, 'foo');
 			a.deep([logger[0].type, logger[0].data], ['pass', 'foo'],
 				"Regular: Logger");
-			a.deep(logger.msg.copy(), ['Regular'], "Regular: Name");
+			a.deep(logger.msg, ['Regular'], "Regular: Name");
 		},
 		"Async": function (x, y, z) {
 			var o = {};
@@ -28,7 +28,7 @@ module.exports = function (t, a, d) {
 			y(x(o), o, 'bar');
 			a.deep([logger[1].type, logger[1].data], ['pass', 'bar'],
 				"Async: Logger");
-			a.deep(logger.msg.copy(), ['Async'], "Async: Name");
+			a.deep(logger.msg, ['Async'], "Async: Name");
 			process.nextTick(function () {
 				inProgress = false;
 				z();
@@ -40,7 +40,7 @@ module.exports = function (t, a, d) {
 			process.nextTick(function () {
 				z({
 					"inner test": function (a) {
-						aa.deep(logger.msg.copy(), ['Async nested', 'inner test'],
+						aa.deep(logger.msg, ['Async nested', 'inner test'],
 							"Async nested: Name");
 						aa(a, assert, "Assert by single arg");
 						inProgress = false;
@@ -51,10 +51,10 @@ module.exports = function (t, a, d) {
 		"Sync nested": function () {
 			a.ok(!inProgress, "Sync nested: Progress");
 			inProgress = true;
-			a.deep(logger.msg.copy(), ['Sync nested'], "Sync nested: Name");
+			a.deep(logger.msg, ['Sync nested'], "Sync nested: Name");
 			return {
 				"inner other": function (t) {
-					a.deep(logger.msg.copy(), ['Sync nested', 'inner other'],
+					a.deep(logger.msg, ['Sync nested', 'inner other'],
 						"Sync nested: inner: Name");
 					a(t, id, "Testee by single arg");
 					inProgress = false;
@@ -65,7 +65,7 @@ module.exports = function (t, a, d) {
 			"in nested": function () {
 				a.ok(!inProgress, "Nested: Progress");
 				inProgress = true;
-				a.deep(logger.msg.copy(), ['Nested', 'in nested'], "Nested: Name");
+				a.deep(logger.msg, ['Nested', 'in nested'], "Nested: Name");
 				inProgress = false;
 			}
 		},
@@ -75,7 +75,7 @@ module.exports = function (t, a, d) {
 			aa(a, assert, "Assert as first arg when two args");
 			d(function (d) {
 				var e, l = logger.length;
-				aa.deep(logger.msg.copy(), ['Check args', ''], "Tests as function");
+				aa.deep(logger.msg, ['Check args', ''], "Tests as function");
 				inProgress = false;
 				d(e = new Error('Foo'));
 				aa(logger[l].data, e, "Async error");

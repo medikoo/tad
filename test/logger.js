@@ -15,7 +15,7 @@ module.exports = function (t, a) {
 	t.out();
 	t.error('error');
 
-	a.deep(t.msg.copy(), [], "Msg");
+	a.deep(t.msg, [], "Msg");
 	a(t.length, 3, "Length");
 	a.deep([t[0].type, t[0].data, t[0].msg.toString()],
 		['pass', 'foo', ''], "#1 pass");
