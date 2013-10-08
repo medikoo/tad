@@ -1,6 +1,6 @@
 'use strict';
 
-var CustomError = require('es5-ext/error/custom')
+var customError = require('es5-ext/error/custom')
   , logger      = require('../lib/logger')();
 
 module.exports = function (t, a) {
@@ -10,7 +10,7 @@ module.exports = function (t, a) {
 	t.not(false, true, 'not');
 	t.deep([1, 2], [1, 2], 'deep');
 	t.notDeep([1, 2], [2, 1], 'not deep');
-	t.throws(function () { throw new CustomError('Test', 'TEST'); }, 'TEST',
+	t.throws(function () { throw customError('Test', 'TEST'); }, 'TEST',
 		'throws');
 
 	a.deep([logger[0].type, logger[0].data], ['pass', 'foo']);
