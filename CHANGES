@@ -1,3 +1,7 @@
+v0.1.20  --  2013.10.25
+* `h1`, `h2`, `h3`, `h4`, `h5`, `h6` methods on assert, which allow inline
+  customization of message prefixes
+
 v0.1.19  --  2013.09.02
 * Workaround for [test package issue](https://github.com/Gozala/test-commonjs/pull/8)
   of no support for Object.create(null) objects
