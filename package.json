@@ -1,6 +1,6 @@
 {
   "name": "tad",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "JavaScript test suite",
   "keywords": [
     "test",
@@ -32,14 +32,14 @@
     "node": ">=0.8"
   },
   "dependencies": {
-    "cli-color": "~0.2.2",
+    "cli-color": "~0.2.3",
     "clock": "~0.1.5",
-    "deferred": "~0.6.5",
+    "deferred": "~0.6.6",
     "duration": "~0.1.4",
     "es5-ext": "git://github.com/medikoo/es5-ext",
     "event-emitter": "~0.2.2",
     "fs2": "~0.1.5",
-    "next": "~0.3.2",
+    "next": "~0.3.3",
     "optimist": "0.6.x",
     "test": "0.6.x"
   },
