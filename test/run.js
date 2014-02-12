@@ -1,6 +1,6 @@
 'use strict';
 
-var id           = require('es5-ext/function/i')
+var identity     = require('es5-ext/function/identity')
   , createLogger = require('../lib/logger')
   , createAssert = require('../lib/assert');
 
@@ -10,11 +10,11 @@ module.exports = function (t, a, d) {
 	  , assert = createAssert(logger)
 	  , aa = a;
 
-	t(id, {
+	t(identity, {
 		"Regular": function (x, y) {
 			var o = {};
 			a.ok(!inProgress, "Regular: Progress");
-			a(x, id, "Regular: Testee");
+			a(x, identity, "Regular: Testee");
 			y(x(o), o, 'foo');
 			a.deep([logger[0].type, logger[0].data], ['pass', 'foo'],
 				"Regular: Logger");
@@ -24,7 +24,7 @@ module.exports = function (t, a, d) {
 			var o = {};
 			a.ok(!inProgress, "Async: Progress");
 			inProgress = true;
-			a(x, id, "Async: Testee");
+			a(x, identity, "Async: Testee");
 			y(x(o), o, 'bar');
 			a.deep([logger[1].type, logger[1].data], ['pass', 'bar'],
 				"Async: Logger");
@@ -56,7 +56,7 @@ module.exports = function (t, a, d) {
 				"inner other": function (t) {
 					a.deep(logger.msg, ['Sync nested', 'inner other'],
 						"Sync nested: inner: Name");
-					a(t, id, "Testee by single arg");
+					a(t, identity, "Testee by single arg");
 					inProgress = false;
 				}
 			};
@@ -85,7 +85,7 @@ module.exports = function (t, a, d) {
 
 	logger.on('end', function () {
 		var l, seen = false;
-		l = t(id, function (t, a) {
+		l = t(identity, function (t, a) {
 			a.ok(true, "Ok");
 		});
 		l.on('data', function () {
