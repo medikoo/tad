@@ -1,3 +1,7 @@
+v0.1.21  --  2014.02.18
+* Support NaN comparision in assert.strictEqual
+* Support CONSTANT_NAME convention for index validation
+
 v0.1.20  --  2013.10.25
 * `h1`, `h2`, `h3`, `h4`, `h5`, `h6` methods on assert, which allow inline
   customization of message prefixes
