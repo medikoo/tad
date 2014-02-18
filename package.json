@@ -41,6 +41,7 @@
     "fs2": "~0.1.5",
     "next": "~0.3.3",
     "optimist": "0.6.x",
+    "path2": "0.1.x",
     "test": "0.6.x"
   },
   "devDependencies": {},
