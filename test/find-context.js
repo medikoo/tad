@@ -6,26 +6,26 @@ module.exports = {
 	"Default": function (t, a, d) {
 		t('ignore', pg + '/test/module.js')(function (context) {
 			a(context, global);
-		}).end(d);
+		}).done(d);
 	},
 	"Custom": {
 		"": function (t, a, d) {
 			var path = pg + '/test/context/';
 			t('ignore', path + 'module.js')(function (context) {
 				a(context.x, require(path + '__tad').context.x);
-			}).end(d);
+			}).done(d);
 		},
 		"Nested": function (t, a, d) {
 			var path = pg + '/test/context/context/', o = { x: {} };
 			t(o, path + 'module.js')(function (context) {
 				a(context.x, require(path + '__tad').context(o).x);
-			}).end(d);
+			}).done(d);
 		},
 		"Nested fallback": function (t, a, d) {
 			var path = pg + '/test/context/';
 			t('ignore', path + '/dir/module.js')(function (context) {
 				a(context.x, require(path + '__tad').context.x);
-			}).end(d);
+			}).done(d);
 		}
 	}
 };

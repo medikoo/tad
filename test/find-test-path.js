@@ -8,11 +8,11 @@ module.exports = {
 	"In lib": function (t, a, d) {
 		t(resolve(playground, 'lib/dir/module.js')).then(function (tpath) {
 			a(tpath, resolve(playground, 'test/dir/module.js'));
-		}).end(d);
+		}).done(d);
 	},
 	"In main": function (t, a, d) {
 		t(resolve(playground, 'module.js')).then(function (tpath) {
 			a(tpath, resolve(playground, 'test/module.js'));
-		}).end(d);
+		}).done(d);
 	}
 };

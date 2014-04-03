@@ -19,7 +19,7 @@ module.exports = function (t, a, d) {
 				a(o[3], global, "Context");
 				findTestPath(o[1])(function (p) {
 					a(p, o[2], "Test path");
-				}).end(d);
+				}).done(d);
 			},
 			"Wrong path": function () {
 				var o = data[1];
@@ -36,7 +36,7 @@ module.exports = function (t, a, d) {
 						a(o[3], global, "Context");
 						findTestPath(o[1])(function (p) {
 							a(p, o[2], "Test path");
-						}).end(d);
+						}).done(d);
 					},
 					"File #2": function (t, a, d) {
 						var o = data[5];
@@ -44,7 +44,7 @@ module.exports = function (t, a, d) {
 						a(o[3], global, "Context");
 						findTestPath(o[1])(function (p) {
 							a(p, o[2], "Test path");
-						}).end(d);
+						}).done(d);
 					}
 				};
 			}

@@ -52,4 +52,4 @@ deferred.map(argv._, function (path) {
 			process.exit(c.errored ? 2 : (c.failed ? 1 : 0));
 		});
 	});
-}).end();
+}).done();
