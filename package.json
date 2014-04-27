@@ -33,7 +33,6 @@
   },
   "dependencies": {
     "cli-color": "~0.2.3",
-    "clock": "~0.1.5",
     "deferred": "~0.6.6",
     "duration": "~0.1.4",
     "es5-ext": "git://github.com/medikoo/es5-ext",
