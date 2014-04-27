@@ -1,7 +1,8 @@
 {
   "name": "tad",
-  "version": "0.1.21",
+  "version": "0.2.0",
   "description": "JavaScript test suite",
+  "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "keywords": [
     "test",
     "factory",
@@ -12,7 +13,6 @@
     "tdd",
     "testing"
   ],
-  "author": "Mariusz Nowak <medikoo+tad@medikoo.com> (http://www.medikoo.com/)",
   "bin": {
     "tad": "./bin/tad"
   },
@@ -21,9 +21,17 @@
     "type": "git",
     "url": "git://github.com/medikoo/tad.git"
   },
-  "bugs": {
-    "email": "medikoo+tad@medikoo.com",
-    "url": "https://github.com/medikoo/tad/issues"
+  "dependencies": {
+    "cli-color": "0.3.x",
+    "deferred": "0.7.x",
+    "duration": "0.2.x",
+    "es5-ext": "~0.10.2",
+    "event-emitter": "~0.3.1",
+    "fs2": "0.2.x",
+    "next": "0.4.x",
+    "optimist": "~0.6.1",
+    "path2": "0.1.x",
+    "test": "0.6.x"
   },
   "scripts": {
     "test": "node ./bin/tad lib"
@@ -31,18 +39,5 @@
   "engines": {
     "node": ">=0.8"
   },
-  "dependencies": {
-    "cli-color": "~0.2.3",
-    "deferred": "~0.6.6",
-    "duration": "~0.1.4",
-    "es5-ext": "git://github.com/medikoo/es5-ext",
-    "event-emitter": "~0.2.2",
-    "fs2": "~0.1.5",
-    "next": "~0.3.3",
-    "optimist": "0.6.x",
-    "path2": "0.1.x",
-    "test": "0.6.x"
-  },
-  "devDependencies": {},
   "licence": "MIT"
 }
