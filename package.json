@@ -33,7 +33,7 @@
     "test": "0.6.x"
   },
   "scripts": {
-    "test": "node ./bin/tad lib"
+    "test": "node ./bin/tad"
   },
   "engines": {
     "node": ">=0.8"
