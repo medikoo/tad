@@ -1,3 +1,10 @@
+v0.2.0  --  2014.04.27
+* Move lib/suite.js so it's  index.js module
+* Remove special handling for `lib` module
+* Cleanup organization of modules in lib folder
+* Update internals to use latest versions of dependencies
+* Remove Makefile (it's environment agnostic project)
+
 v0.1.21  --  2014.02.18
 * Support NaN comparision in assert.strictEqual
 * Support CONSTANT_NAME convention for index validation
