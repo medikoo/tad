@@ -8,7 +8,7 @@ var compact  = require('es5-ext/array/#/compact')
   , flatten  = require('es5-ext/array/#/flatten')
   , deferred = require('deferred')
   , path     = require('path')
-  , findRoot = require('next/lib/module/find-package-root')
+  , findRoot = require('next/module/find-package-root')
   , readdir  = require('fs2/lib/readdir')
   , stat     = require('fs2/lib/stat')
 
