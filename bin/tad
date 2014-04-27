@@ -19,11 +19,11 @@ var compact  = require('es5-ext/array/#/compact')
 	.describe('m', "Minimise output, verbose only for fails or errors").argv
 
   , extname = path.extname, resolve = path.resolve
-  , suite = require('../lib/suite');
+  , suite = require('../');
 
 if (!argv._.length) argv._ = ['.'];
 
-require('../lib/_tad-ignore-mode');
+require('../lib/tad-ignore-mode');
 
 deferred.map(argv._, function (path) {
 	if (path !== '.') return path;

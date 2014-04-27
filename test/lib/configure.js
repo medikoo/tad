@@ -1,7 +1,7 @@
 'use strict';
 
-var findTestPath = require('../lib/find-test-path')
-  , pg = __dirname + '/__playground/lib/';
+var findTestPath = require('../../lib/find-test-path')
+  , pg = require('path').resolve(__dirname,  '../__playground/lib') + '/';
 
 module.exports = function (t, a, d) {
 	var l, data, paths = [pg + 'module.js', '/wrong/path', pg + 'dir'];

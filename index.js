@@ -5,10 +5,10 @@ var spread       = require('es5-ext/function/#/spread')
   , path         = require('path')
   , commonPath   = require('path2/common')
   , runInContext = require('vm').runInContext
-  , out          = require('./console')
-  , configure    = require('./configure')
-  , load         = require('./load')
-  , run          = require('./run')
+  , out          = require('./lib/console')
+  , configure    = require('./lib/configure')
+  , load         = require('./lib/load')
+  , run          = require('./lib/run')
 
   , resolve = path.resolve, map = Array.prototype.map
   , suite, isError;

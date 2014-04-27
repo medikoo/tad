@@ -1,6 +1,6 @@
 'use strict';
 
-var pg = __dirname + '/__playground';
+var pg = require('path').resolve(__dirname, '../__playground');
 
 module.exports = {
 	"Default": function (t, a, d) {

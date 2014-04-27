@@ -1,8 +1,8 @@
 'use strict';
 
 var identity     = require('es5-ext/function/identity')
-  , createLogger = require('../lib/logger')
-  , createAssert = require('../lib/assert');
+  , createLogger = require('../../lib/logger')
+  , createAssert = require('../../lib/assert');
 
 module.exports = function (t, a, d) {
 	var inProgress = false

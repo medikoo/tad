@@ -16,7 +16,6 @@
   "bin": {
     "tad": "./bin/tad"
   },
-  "main": "lib/suite",
   "repository": {
     "type": "git",
     "url": "git://github.com/medikoo/tad.git"
