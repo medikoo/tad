@@ -27,8 +27,8 @@ Example console output:
 <a name="usage-file-management" />
 ### File management
 
-Keep your code in _lib_ folder and tests in _test_ folder.
-For each file in in _lib_ folder have corresponding test file in _test_ folder.
+Keep your tests in _test_ folder. For each file in in main folder have corresponding test file in
+_test_ folder.
 
 <a name="usage-test-files" />
 ### Test files
