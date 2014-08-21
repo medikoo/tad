@@ -11,7 +11,7 @@ module.exports = function (t, a, d) {
 	  , aa = a;
 
 	t(identity, {
-		"Regular": function (x, y) {
+		Regular: function (x, y) {
 			var o = {};
 			a.ok(!inProgress, "Regular: Progress");
 			a(x, identity, "Regular: Testee");
@@ -20,7 +20,7 @@ module.exports = function (t, a, d) {
 				"Regular: Logger");
 			a.deep(logger.msg, ['Regular'], "Regular: Name");
 		},
-		"Async": function (x, y, z) {
+		Async: function (x, y, z) {
 			var o = {};
 			a.ok(!inProgress, "Async: Progress");
 			inProgress = true;
@@ -61,7 +61,7 @@ module.exports = function (t, a, d) {
 				}
 			};
 		},
-		"Nested": {
+		Nested: {
 			"in nested": function () {
 				a.ok(!inProgress, "Nested: Progress");
 				inProgress = true;

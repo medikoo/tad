@@ -12,7 +12,7 @@ module.exports = function (t, a, d) {
 	});
 	l('end', function () {
 		d({
-			"File": function (t, a, d) {
+			File: function (t, a, d) {
 				var o = data[0];
 				a(o[0], paths[0], "Path");
 				a(o[1], paths[0], "File");
@@ -26,7 +26,7 @@ module.exports = function (t, a, d) {
 				a(o[0], paths[1], "Path");
 				a.ok(o[1] instanceof Error, "Error");
 			},
-			"Directory": function () {
+			Directory: function () {
 				a(data.length, 6, "Files length");
 				return {
 					"File #1": function (t, a, d) {
