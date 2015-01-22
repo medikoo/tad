@@ -1,6 +1,6 @@
 {
   "name": "tad",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "JavaScript test suite",
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "keywords": [
@@ -21,20 +21,20 @@
     "url": "git://github.com/medikoo/tad.git"
   },
   "dependencies": {
-    "cli-color": "0.3.x",
-    "deferred": "0.7.x",
-    "duration": "0.2.x",
-    "es5-ext": "~0.10.2",
-    "event-emitter": "~0.3.1",
-    "fs2": "0.2.x",
-    "next": "0.4.x",
+    "cli-color": "~0.3.2",
+    "deferred": "~0.7.2",
+    "duration": "0.2",
+    "es5-ext": "~0.10.5",
+    "event-emitter": "~0.3.2",
+    "fs2": "~0.2.1",
+    "next": "0.4",
     "optimist": "~0.6.1",
-    "path2": "0.1.x",
-    "test": "0.6.x"
+    "path2": "0.1",
+    "test": "0.6"
   },
   "devDependencies": {
-    "xlint": "~0.2.1",
-    "xlint-jslint-medikoo": "0.1.x"
+    "xlint": "~0.2.2",
+    "xlint-jslint-medikoo": "~0.1.2"
   },
   "scripts": {
     "lint": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --no-cache --no-stream",

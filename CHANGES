@@ -1,3 +1,10 @@
+v0.2.1  --  2015.01.22
+* Make assertion messages optional. If message is not provided line and
+  column number of assertion is provided instead
+* Fix issue in assert headings resolution
+* Configure lint scripts
+* Fix LICENSE spelling
+
 v0.2.0  --  2014.04.27
 * Move lib/suite.js so it's  index.js module
 * Remove special handling for `lib` module
