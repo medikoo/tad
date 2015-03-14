@@ -1,3 +1,6 @@
+v0.2.2  --  2015.03.14
+* Fix index resolution, so it's not affected by Symbol polyfill workaround
+
 v0.2.1  --  2015.01.22
 * Make assertion messages optional. If message is not provided line and
   column number of assertion is provided instead
