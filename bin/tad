@@ -38,6 +38,7 @@ deferred.map(argv._, function (path) {
 					if (name === 'node_modules') return null;
 					if (name === 'bin') return null;
 					if (name === 'test') return null;
+					if (name === 'examples') return null;
 					return filename;
 				}
 				if (extname(name) === '.js') return filename;
