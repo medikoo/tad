@@ -1,3 +1,6 @@
+v0.2.4  --  2015.10.14
+* Fix automatic lines resolution (in case no message is provided)
+
 v0.2.3  --  2015.06.08
 * Ignore by default 'examples' folder
 * Update up to changes in cli-color
