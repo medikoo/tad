@@ -50,7 +50,8 @@ deferred.map(argv._, function (path) {
 	return suite(flatten.call(paths), argv)(function (suite) {
 		var c = suite.console;
 		process.on('exit', function () {
-			process.exit(c.errored ? 2 : (c.failed ? 1 : 0));
+			if (c.errored) process.exitCode = 2;
+			else if (c.failed) process.exitCode = 1;
 		});
 	});
 }).done();
