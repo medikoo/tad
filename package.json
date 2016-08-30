@@ -23,12 +23,12 @@
   "dependencies": {
     "cli-color": "~1.1",
     "d": "~0.1.1",
-    "deferred": "~0.7.3",
+    "deferred": "~0.7.5",
     "duration": "0.2",
-    "es5-ext": "~0.10.8",
+    "es5-ext": "~0.10.12",
     "event-emitter": "~0.3.4",
     "fs2": "~0.2.3",
-    "next": "0.4",
+    "next": "~0.4.1",
     "optimist": "~0.6.1",
     "path2": "0.1",
     "test": "0.6"
