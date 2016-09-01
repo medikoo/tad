@@ -31,7 +31,7 @@ deferred.map(argv._, function (path) {
 	return findRoot(resolve(path, 'x'))(function (root) {
 		if (root !== path) return path;
 		return readdir(path, { type: { file: true, directory: true },
-			ignoreRules: 'tad' }).map(function (name) {
+			ignoreRules: ['git', 'tad'] }).map(function (name) {
 			var filename = resolve(path, name);
 			return stat(resolve(path, name))(function (stats) {
 				if (stats.isDirectory()) {
