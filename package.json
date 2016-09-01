@@ -1,6 +1,6 @@
 {
   "name": "tad",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "JavaScript test suite",
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "keywords": [
@@ -41,9 +41,6 @@
     "lint": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --no-cache --no-stream",
     "lint-console": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --watch",
     "test": "node ./bin/tad"
-  },
-  "engines": {
-    "node": ">=0.8"
   },
   "license": "MIT"
 }
