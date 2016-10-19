@@ -1,3 +1,6 @@
+v0.2.7  --  2016.10.19
+* Do not crash in case there are no files to test
+
 v0.2.6  --  2016.09.01
 * Ensure to not test files that are ignored by .gitignore rules
 
