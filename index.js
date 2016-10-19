@@ -33,7 +33,7 @@ suite = {
 		if (paths.length > 1) {
 			root = commonPath.apply(null, paths);
 			this.rindex = root ? (root.length + 1) : 0;
-		} else {
+		} else if (paths.length) {
 			this.rindex = paths[0].length + 1;
 		}
 
