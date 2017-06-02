@@ -39,18 +39,18 @@ _test_ folder.
 
 Tests should be written as set of functions, it can be just one function:
 ```js
-	module.exports = function (t, a, d) {
-		// tests
-	};
+module.exports = function (t, a, d) {
+	// tests
+};
 ```
 or many thematically grouped functions:
 ```js
-	exports["Test this"] = function (t, a, d) {
-		// tests
-	};
-	exports["Test that"] = function (t, a, d) {
-		// tests
-	};
+exports["Test this"] = function (t, a, d) {
+	// tests
+};
+exports["Test that"] = function (t, a, d) {
+	// tests
+};
 ```
 <a name="usage-test-functions" />
 
@@ -70,47 +70,47 @@ which arguments should be passed to test function. Examples:
 
 * Asynchronous test:
 ```js
-		exports["Some tests"] = funtcion (t, a, d) {
-			// tests
-			setTimeout(function () {
-				// tests
-				d();
-			}, 100);
-		};
+exports["Some tests"] = funtcion (t, a, d) {
+		// tests
+		setTimeout(function () {
+		   // tests
+		   d();
+		}, 100);
+};
 ```
 * Synchronous test:
 ```js
-		exports["Some tests"] = function (t, a) {
-			// tests
-		};
+exports["Some tests"] = function (t, a) {
+	// tests
+};
 ```
 Tests can be nested, and declared various ways (synchronous/asynchronous)
 ```js
-	module.exports["Test all"] = function (t, a) {
-		// Preparation code
+module.exports["Test all"] = function (t, a) {
+	// Preparation code
 
-		// ... tests ...
+	// ... tests ...
 
-		return {
-			"Test this": function () {
-				// We already have module and assert object
+	return {
+		"Test this": function () {
+			// We already have module and assert object
+			// ... tests ...
+		},
+		"Test that async way": function (d) {
+			// This one is asynchronous
+			// ... tests ....
+
+			seTimeout(function () {
 				// ... tests ...
-			},
-			"Test that async way": function (d) {
-				// This one is asynchronous
-				// ... tests ....
-
-				seTimeout(function () {
-					// ... tests ...
-					d({
-						"Some extra tests": function () {
+				d({
+					"Some extra tests": function () {
 							// ... tests ...
-						}
-					})
-				}, 100);
-			}
-		};
+					}
+				})
+			}, 100);
+		}
 	};
+};
 ```
 <a name="usage-assertions" />
 
@@ -124,9 +124,9 @@ TAD adds some extra sugar to UncommonJS Assert object:
 
 * `a === a.strictEqual`, so you can write your assertions as:
 ```js
-		a(shouldBeTrue, true, "It's true");
-		// it has same effect as:
-		a.strictEqual(shouldBeTrue, true, "It's true");
+a(shouldBeTrue, true, "It's true");
+// it has same effect as:
+a.strictEqual(shouldBeTrue, true, "It's true");
 ```
 * `a.not` is an alias for `a.notStrictEqual`
 * `a.deep` is an alias for `a.deepEqual`
