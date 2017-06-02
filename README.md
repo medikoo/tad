@@ -17,38 +17,43 @@ Example console output:
 * [TODO](#todo)
 
 <a name="installation" />
+
 ## Installation
 
 	$ npm install tad
 
 <a name="usage" />
+
 ## Usage
 
 <a name="usage-file-management" />
+
 ### File management
 
 Keep your tests in _test_ folder. For each file in in main folder have corresponding test file in
 _test_ folder.
 
 <a name="usage-test-files" />
+
 ### Test files
 
 Tests should be written as set of functions, it can be just one function:
-
-	module.exports = function (t, a, d) {
-		// tests
-	};
-
+```js
+module.exports = function (t, a, d) {
+	// tests
+};
+```
 or many thematically grouped functions:
-
-	exports["Test this"] = function (t, a, d) {
-		// tests
-	};
-	exports["Test that"] = function (t, a, d) {
-		// tests
-	};
-
+```js
+exports["Test this"] = function (t, a, d) {
+	// tests
+};
+exports["Test that"] = function (t, a, d) {
+	// tests
+};
+```
 <a name="usage-test-functions" />
+
 ### Test functions
 
 Arguments passed to test functions are:
@@ -64,50 +69,51 @@ All arguments are optional, and by the way function is declared suite detect
 which arguments should be passed to test function. Examples:
 
 * Asynchronous test:
-
-		exports["Some tests"] = funtcion (t, a, d) {
-			// tests
-			setTimeout(function () {
-				// tests
-				d();
-			}, 100);
-		};
-
+```js
+exports["Some tests"] = funtcion (t, a, d) {
+		// tests
+		setTimeout(function () {
+		   // tests
+		   d();
+		}, 100);
+};
+```
 * Synchronous test:
-
-		exports["Some tests"] = function (t, a) {
-			// tests
-		};
-
+```js
+exports["Some tests"] = function (t, a) {
+	// tests
+};
+```
 Tests can be nested, and declared various ways (synchronous/asynchronous)
+```js
+module.exports["Test all"] = function (t, a) {
+	// Preparation code
 
-	module.exports["Test all"] = function (t, a) {
-		// Preparation code
+	// ... tests ...
 
-		// ... tests ...
+	return {
+		"Test this": function () {
+			// We already have module and assert object
+			// ... tests ...
+		},
+		"Test that async way": function (d) {
+			// This one is asynchronous
+			// ... tests ....
 
-		return {
-			"Test this": function () {
-				// We already have module and assert object
+			seTimeout(function () {
 				// ... tests ...
-			},
-			"Test that async way": function (d) {
-				// This one is asynchronous
-				// ... tests ....
-
-				seTimeout(function () {
-					// ... tests ...
-					d({
-						"Some extra tests": function () {
+				d({
+					"Some extra tests": function () {
 							// ... tests ...
-						}
-					})
-				}, 100);
-			}
-		};
+					}
+				})
+			}, 100);
+		}
 	};
-
+};
+```
 <a name="usage-assertions" />
+
 ### Assertions
 
 TAD uses assert object from [UncommonJS tests runner](https://github.com/Gozala/test-commonjs/),
@@ -117,17 +123,18 @@ https://github.com/kriskowal/uncommonjs/blob/master/tests/specification.md .
 TAD adds some extra sugar to UncommonJS Assert object:
 
 * `a === a.strictEqual`, so you can write your assertions as:
-
-		a(shouldBeTrue, true, "It's true");
-		// it has same effect as:
-		a.strictEqual(shouldBeTrue, true, "It's true");
-
+```js
+a(shouldBeTrue, true, "It's true");
+// it has same effect as:
+a.strictEqual(shouldBeTrue, true, "It's true");
+```
 * `a.not` is an alias for `a.notStrictEqual`
 * `a.deep` is an alias for `a.deepEqual`
 * `a.notDeep` is an alias for `a.notDeepEqual`
 * `assert.never` with that you can check function paths that should never be called.
 
 <a name="usage-running-tests" />
+
 ### Running tests
 
 Test your file with provided binary:
@@ -139,6 +146,7 @@ or test all files in path:
 	$ bin/tad lib
 
 <a name="todo" />
+
 ## TODO
 
 * Full custom context support
