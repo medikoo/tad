@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "cli-color": "~1.1",
-    "d": "~0.1.1",
+    "d": "1",
     "deferred": "~0.7.5",
     "duration": "0.2",
     "es5-ext": "~0.10.12",
