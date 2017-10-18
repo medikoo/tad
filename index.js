@@ -8,16 +8,14 @@ var spread       = require("es5-ext/function/#/spread")
   , out          = require("./lib/console")
   , configure    = require("./lib/configure")
   , load         = require("./lib/load")
-  , run          = require("./lib/run")
+  , run          = require("./lib/run");
 
-  , resolve = path.resolve, map = Array.prototype.map
-  , suite, isError;
+var resolve = path.resolve, map = Array.prototype.map, suite, isError;
 
 isError = function (e, context) {
 	if (e instanceof Error) return true;
 	if (context !== global) {
-		return runInContext("(function () { return this instanceof Error; })",
-			context).call(e);
+		return runInContext("(function () { return this instanceof Error; })", context).call(e);
 	}
 	return false;
 };
@@ -27,8 +25,8 @@ suite = {
 		var conf, d, root;
 		d = deferred();
 		paths = map.call(paths, function (path) {
- return resolve(path);
-});
+			return resolve(path);
+		});
 		this.resolve = d.resolve;
 		this.console = out(options);
 		this.tail = deferred(null);
@@ -88,23 +86,25 @@ suite = {
 			return d.resolve();
 		}
 		if (!o.test) {
-			this.console.error(pname, fname, "Tests could not be loaded, tried '" +
-				tpath + "'");
+			this.console.error(pname, fname, "Tests could not be loaded, tried '" + tpath + "'");
 			return d.resolve();
 		}
 
 		// Loaded ok, run tests
 		logger = run(o.testee, o.test);
-		logger.on("data", function (o) {
-			var name = [fname].concat(o.msg);
-			if (o.type === "pass") {
-				name.push(o.data);
-			} else if ((o.type === "fail") && o.data.operator) {
-				name.push(o.data.message);
-			}
-			name = name.filter(Boolean).join(": ");
-			this.console[o.type](fname, name, o.data);
-		}.bind(this));
+		logger.on(
+			"data",
+			function (o) {
+				var name = [fname].concat(o.msg);
+				if (o.type === "pass") {
+					name.push(o.data);
+				} else if (o.type === "fail" && o.data.operator) {
+					name.push(o.data.message);
+				}
+				name = name.filter(Boolean).join(": ");
+				this.console[o.type](fname, name, o.data);
+			}.bind(this)
+		);
 		logger.on("end", function () {
 			d.resolve();
 		});
