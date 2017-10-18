@@ -4,13 +4,13 @@ var findTestPath = require("../../lib/find-test-path")
   , pg           = require("path").resolve(__dirname, "../__playground/lib") + "/";
 
 module.exports = function (t, a, d) {
-	var l, data, paths = [pg + "module.js", "/wrong/path", pg + "dir"];
-	l = t(paths);
+	var logger, data, paths = [pg + "module.js", "/wrong/path", pg + "dir"];
+	logger = t(paths);
 	data = [];
-	l("data", function () {
+	logger("data", function () {
 		data.push(arguments);
 	});
-	l("end", function () {
+	logger("end", function () {
 		d({
 			"File": function (t, a, d) {
 				var o = data[0];

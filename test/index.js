@@ -1,6 +1,9 @@
 "use strict";
 
-var pg = __dirname + "/__playground", n4 = process.version.indexOf("v0.4") === 0;
+var noop    = require("es5-ext/function/noop")
+  , resolve = require("path").resolve;
+
+var pg = resolve(__dirname, "__playground"), n4 = process.version.indexOf("v0.4") === 0;
 
 module.exports = function (t, a, d) {
 	if (!n4) {
@@ -10,8 +13,8 @@ module.exports = function (t, a, d) {
 	var outorg, errorg;
 	outorg = process.stdout._writeOut;
 	errorg = process.stderr._writeOut;
-	process.stdout._writeOut = function (data) {};
-	process.stderr._writeOut = function (data) {};
+	process.stdout._writeOut = noop;
+	process.stderr._writeOut = noop;
 
 	t([
 		"/wrong/path",

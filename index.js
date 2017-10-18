@@ -22,17 +22,17 @@ isError = function (e, context) {
 
 suite = {
 	init: function (paths, options) {
-		var conf, d, root;
+		var conf, d, projectRoot;
 		d = deferred();
-		paths = map.call(paths, function (path) {
-			return resolve(path);
+		paths = map.call(paths, function (testPath) {
+			return resolve(testPath);
 		});
 		this.resolve = d.resolve;
 		this.console = out(options);
 		this.tail = deferred(null);
 		if (paths.length > 1) {
-			root = commonPath.apply(null, paths);
-			this.rindex = root ? root.length + 1 : 0;
+			projectRoot = commonPath.apply(null, paths);
+			this.rindex = projectRoot ? projectRoot.length + 1 : 0;
 		} else if (paths.length) {
 			this.rindex = paths[0].length + 1;
 		}
@@ -45,8 +45,9 @@ suite = {
 	ondata: function () {
 		this.tail = this.tail(spread.call(this.process).bind(this, arguments));
 	},
-	process: function (p, fpath, tpath, context) {
-		var pname = p.slice(this.rindex), fname, logger, o, d;
+	// eslint-disable-next-line max-statements
+	process: function (modulePath, fpath, tpath, context) {
+		var pname = modulePath.slice(this.rindex), fname, logger, testModuleConfig, d;
 		d = deferred();
 		this.console.break();
 		if (fpath instanceof Error) {
@@ -68,41 +69,41 @@ suite = {
 		}
 
 		// Configured ok, load files
-		o = load(fpath, tpath, context);
+		testModuleConfig = load(fpath, tpath, context);
 
 		// Any files missing, any evaluation errors ?
-		if (o.testee === undefined) {
+		if (testModuleConfig.testee === undefined) {
 			// File not accessible
 			this.console.error(pname, fname, "Couldn't load module '" + fpath + "'");
 			return d.resolve();
 		}
 
-		if (isError(o.test, context)) {
-			this.console.error(pname, fname, o.test);
+		if (isError(testModuleConfig.test, context)) {
+			this.console.error(pname, fname, testModuleConfig.test);
 			return d.resolve();
 		}
-		if (isError(o.testee, context)) {
-			this.console.error(pname, fname, o.testee);
+		if (isError(testModuleConfig.testee, context)) {
+			this.console.error(pname, fname, testModuleConfig.testee);
 			return d.resolve();
 		}
-		if (!o.test) {
+		if (!testModuleConfig.test) {
 			this.console.error(pname, fname, "Tests could not be loaded, tried '" + tpath + "'");
 			return d.resolve();
 		}
 
 		// Loaded ok, run tests
-		logger = run(o.testee, o.test);
+		logger = run(testModuleConfig.testee, testModuleConfig.test);
 		logger.on(
 			"data",
-			function (o) {
-				var name = [fname].concat(o.msg);
-				if (o.type === "pass") {
-					name.push(o.data);
-				} else if (o.type === "fail" && o.data.operator) {
-					name.push(o.data.message);
+			function (testResult) {
+				var name = [fname].concat(testResult.msg);
+				if (testResult.type === "pass") {
+					name.push(testResult.data);
+				} else if (testResult.type === "fail" && testResult.data.operator) {
+					name.push(testResult.data.message);
 				}
 				name = name.filter(Boolean).join(": ");
-				this.console[o.type](fname, name, o.data);
+				this.console[testResult.type](fname, name, testResult.data);
 			}.bind(this)
 		);
 		logger.on("end", function () {
