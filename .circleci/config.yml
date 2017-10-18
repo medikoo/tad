@@ -22,6 +22,3 @@ workflows:
   test_and_lint:
     jobs:
       - lint
-      - node8
-      - node6
-      - node4
