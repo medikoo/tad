@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
-exports.First = { name: 'First' };
-exports.Second = { name: 'Second' };
+exports.First = { name: "First" };
+exports.Second = { name: "Second" };

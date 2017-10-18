@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 exports.pass = function (t, a) {
 	a.ok(true, "Pass");

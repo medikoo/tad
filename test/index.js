@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-var pg = __dirname + '/__playground'
-  , n4 = (process.version.indexOf('v0.4') === 0);
+var pg = __dirname + "/__playground"
+  , n4 = process.version.indexOf("v0.4") === 0;
 
 module.exports = function (t, a, d) {
 	if (!n4) {
@@ -15,12 +15,12 @@ module.exports = function (t, a, d) {
 	process.stderr._writeOut = function (data) {};
 
 	t([
-		'/wrong/path',
-		pg + '/lib/context-error/module.js',
-		pg + '/lib/evaluation-error.js',
-		pg + '/lib/test-evaluation-error.js',
-		pg + '/lib/no-tests.js',
-		pg + '/lib/module.js'
+		"/wrong/path",
+		pg + "/lib/context-error/module.js",
+		pg + "/lib/evaluation-error.js",
+		pg + "/lib/test-evaluation-error.js",
+		pg + "/lib/no-tests.js",
+		pg + "/lib/module.js"
 	])(function () {
 		process.stdout._writeOut = outorg;
 		process.stderr._writeOut = errorg;

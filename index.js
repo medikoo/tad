@@ -1,14 +1,14 @@
-'use strict';
+"use strict";
 
-var spread       = require('es5-ext/function/#/spread')
-  , deferred     = require('deferred')
-  , path         = require('path')
-  , commonPath   = require('path2/common')
-  , runInContext = require('vm').runInContext
-  , out          = require('./lib/console')
-  , configure    = require('./lib/configure')
-  , load         = require('./lib/load')
-  , run          = require('./lib/run')
+var spread       = require("es5-ext/function/#/spread")
+  , deferred     = require("deferred")
+  , path         = require("path")
+  , commonPath   = require("path2/common")
+  , runInContext = require("vm").runInContext
+  , out          = require("./lib/console")
+  , configure    = require("./lib/configure")
+  , load         = require("./lib/load")
+  , run          = require("./lib/run")
 
   , resolve = path.resolve, map = Array.prototype.map
   , suite, isError;
@@ -16,7 +16,7 @@ var spread       = require('es5-ext/function/#/spread')
 isError = function (e, context) {
 	if (e instanceof Error) return true;
 	if (context !== global) {
-		return runInContext('(function () { return this instanceof Error; })',
+		return runInContext("(function () { return this instanceof Error; })",
 			context).call(e);
 	}
 	return false;
@@ -26,20 +26,22 @@ suite = {
 	init: function (paths, options) {
 		var conf, d, root;
 		d = deferred();
-		paths = map.call(paths, function (path) { return resolve(path); });
+		paths = map.call(paths, function (path) {
+ return resolve(path);
+});
 		this.resolve = d.resolve;
 		this.console = out(options);
 		this.tail = deferred(null);
 		if (paths.length > 1) {
 			root = commonPath.apply(null, paths);
-			this.rindex = root ? (root.length + 1) : 0;
+			this.rindex = root ? root.length + 1 : 0;
 		} else if (paths.length) {
 			this.rindex = paths[0].length + 1;
 		}
 
 		conf = configure(paths);
-		conf('data', this.ondata.bind(this));
-		conf('end', this.onend.bind(this));
+		conf("data", this.ondata.bind(this));
+		conf("end", this.onend.bind(this));
 		return d.promise;
 	},
 	ondata: function () {
@@ -57,7 +59,7 @@ suite = {
 
 		fname = fpath.slice(this.rindex);
 		if (tpath instanceof Error) {
-			if (tpath.type === 'testfile') {
+			if (tpath.type === "testfile") {
 				// Input is a test file, ignore
 				return d.resolve();
 			}
@@ -93,17 +95,17 @@ suite = {
 
 		// Loaded ok, run tests
 		logger = run(o.testee, o.test);
-		logger.on('data', function (o) {
+		logger.on("data", function (o) {
 			var name = [fname].concat(o.msg);
-			if (o.type === 'pass') {
+			if (o.type === "pass") {
 				name.push(o.data);
-			} else if ((o.type === 'fail') && o.data.operator) {
+			} else if ((o.type === "fail") && o.data.operator) {
 				name.push(o.data.message);
 			}
-			name = name.filter(Boolean).join(': ');
+			name = name.filter(Boolean).join(": ");
 			this.console[o.type](fname, name, o.data);
 		}.bind(this));
-		logger.on('end', function () {
+		logger.on("end", function () {
 			d.resolve();
 		});
 

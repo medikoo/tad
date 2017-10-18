@@ -1,18 +1,18 @@
-'use strict';
+"use strict";
 
-var findTestPath = require('../../lib/find-test-path')
-  , pg = require('path').resolve(__dirname,  '../__playground/lib') + '/';
+var findTestPath = require("../../lib/find-test-path")
+  , pg = require("path").resolve(__dirname, "../__playground/lib") + "/";
 
 module.exports = function (t, a, d) {
-	var l, data, paths = [pg + 'module.js', '/wrong/path', pg + 'dir'];
+	var l, data, paths = [pg + "module.js", "/wrong/path", pg + "dir"];
 	l = t(paths);
 	data = [];
-	l('data', function () {
+	l("data", function () {
 		data.push(arguments);
 	});
-	l('end', function () {
+	l("end", function () {
 		d({
-			File: function (t, a, d) {
+			"File": function (t, a, d) {
 				var o = data[0];
 				a(o[0], paths[0], "Path");
 				a(o[1], paths[0], "File");
@@ -26,12 +26,12 @@ module.exports = function (t, a, d) {
 				a(o[0], paths[1], "Path");
 				a.ok(o[1] instanceof Error, "Error");
 			},
-			Directory: function () {
+			"Directory": function () {
 				a(data.length, 6, "Files length");
 				return {
 					"File #1": function (t, a, d) {
 						var o = data[2];
-						// console.log(o);
+						// Console.log(o);
 						a(o[0], paths[2], "Path");
 						a(o[3], global, "Context");
 						findTestPath(o[1])(function (p) {

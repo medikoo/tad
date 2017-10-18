@@ -1,15 +1,15 @@
-'use strict';
+"use strict";
 
-var oForEach       = require('es5-ext/object/for-each')
-  , AssertionError = require('test/assert').AssertionError
+var oForEach       = require("es5-ext/object/for-each")
+  , AssertionError = require("test/assert").AssertionError
 
-  , n4 = (process.version.indexOf('v0.4') === 0);
+  , n4 = process.version.indexOf("v0.4") === 0;
 
 module.exports = function (t, a) {
 	if (!n4) {
 		return;
 	}
-	var outorg, errorg, outl = '', errl = '',  console, results = {};
+	var outorg, errorg, outl = "", errl = "", console, results = {};
 	outorg = process.stdout._writeOut;
 	errorg = process.stderr._writeOut;
 	process.stdout._writeOut = function (data) {
@@ -21,67 +21,67 @@ module.exports = function (t, a) {
 
 	console = t({});
 
-	console.pass('foo', 'bar');
-	results['Pass content'] = [outl.length > 0];
-	results['Pass lines'] = [outl.split('\n').length, 1];
-	outl = '';
+	console.pass("foo", "bar");
+	results["Pass content"] = [outl.length > 0];
+	results["Pass lines"] = [outl.split("\n").length, 1];
+	outl = "";
 
-	console.pass('foo', 'bar');
-	results['Second Pass content'] = [outl.length > 0];
-	results['Second Pass lines'] = [outl.split('\n').length, 1];
-	outl = '';
+	console.pass("foo", "bar");
+	results["Second Pass content"] = [outl.length > 0];
+	results["Second Pass lines"] = [outl.split("\n").length, 1];
+	outl = "";
 
-	console.fail('foo', 'bar', new AssertionError({
-		message: 'foo',
-		actual: 'foo',
-		expected: 'foo',
-		operator: 'foo'
+	console.fail("foo", "bar", new AssertionError({
+		message: "foo",
+		actual: "foo",
+		expected: "foo",
+		operator: "foo"
 	}));
-	results['Fail content'] = [outl.length > 0];
-	results['Fail lines'] = [outl.split('\n').length, 6];
-	outl = '';
+	results["Fail content"] = [outl.length > 0];
+	results["Fail lines"] = [outl.split("\n").length, 6];
+	outl = "";
 
-	console.error('foo', 'bar', new Error('foo'));
-	results['Error content'] = [outl.length > 0];
-	results['Error lines'] = [outl.split('\n').length > 4];
-	outl = '';
+	console.error("foo", "bar", new Error("foo"));
+	results["Error content"] = [outl.length > 0];
+	results["Error lines"] = [outl.split("\n").length > 4];
+	outl = "";
 
-	console.fail('foo', 'bar', new Error('foo'));
-	results['Fail error  content'] = [outl.length > 0];
-	results['Fail error  lines'] = [outl.split('\n').length > 4];
-	outl = '';
+	console.fail("foo", "bar", new Error("foo"));
+	results["Fail error  content"] = [outl.length > 0];
+	results["Fail error  lines"] = [outl.split("\n").length > 4];
+	outl = "";
 
-	console.fail('foo', 'bar', new AssertionError({
-		message: 'foo',
-		operator: 'throws'
+	console.fail("foo", "bar", new AssertionError({
+		message: "foo",
+		operator: "throws"
 	}));
-	results['Fail throws content'] = [outl.length > 0];
-	results['Fail throws lines'] = [outl.split('\n').length, 3];
-	outl = '';
+	results["Fail throws content"] = [outl.length > 0];
+	results["Fail throws lines"] = [outl.split("\n").length, 3];
+	outl = "";
 
 	console.end();
-	results['Summary content'] = [outl.length > 0];
-	results['Summary length'] = [outl.split('\n').length, 4];
-	outl = '';
+	results["Summary content"] = [outl.length > 0];
+	results["Summary length"] = [outl.split("\n").length, 4];
+	outl = "";
 
-	results['No errors stdout'] = [errl.length, 0];
-	errl = '';
+	results["No errors stdout"] = [errl.length, 0];
+	errl = "";
 
 	console = t({ a: true });
-	console.pass('foo', 'bar');
-	results['Show all Pass content'] = [outl.length > 0];
-	results['Show all Pass lines'] = [outl.split('\n').length, 2];
-	outl = '';
+	console.pass("foo", "bar");
+	results["Show all Pass content"] = [outl.length > 0];
+	results["Show all Pass lines"] = [outl.split("\n").length, 2];
+	outl = "";
 
-	console.pass('foo', 'bar');
-	results['Show all second Pass content'] = [outl.length > 0];
-	results['Show all second Pass lines'] = [outl.split('\n').length, 2];
-	outl = '';
+	console.pass("foo", "bar");
+	results["Show all second Pass content"] = [outl.length > 0];
+	results["Show all second Pass lines"] = [outl.split("\n").length, 2];
+	outl = "";
 
 	console.end();
 
-	results['Show all no errors stdout'] = [errl.length, 0];
-	errl = '';
+	results["Show all no errors stdout"] = [errl.length, 0];
+	errl = "";
 
 	process.stdout._writeOut = outorg;
 	process.stderr._writeOut = errorg;
