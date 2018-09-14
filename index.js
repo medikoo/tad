@@ -24,9 +24,7 @@ suite = {
 	init: function (paths, options) {
 		var conf, d, projectRoot;
 		d = deferred();
-		paths = map.call(paths, function (testPath) {
-			return resolve(testPath);
-		});
+		paths = map.call(paths, function (testPath) { return resolve(testPath); });
 		this.resolve = d.resolve;
 		this.console = out(options);
 		this.tail = deferred(null);
@@ -42,9 +40,7 @@ suite = {
 		conf("end", this.onend.bind(this));
 		return d.promise;
 	},
-	ondata: function () {
-		this.tail = this.tail(spread.call(this.process).bind(this, arguments));
-	},
+	ondata: function () { this.tail = this.tail(spread.call(this.process).bind(this, arguments)); },
 	// eslint-disable-next-line max-statements
 	process: function (modulePath, fpath, tpath, context) {
 		var pname = modulePath.slice(this.rindex), fname, logger, testModuleConfig, d;
@@ -106,9 +102,7 @@ suite = {
 				this.console[testResult.type](fname, name, testResult.data);
 			}.bind(this)
 		);
-		logger.on("end", function () {
-			d.resolve();
-		});
+		logger.on("end", function () { d.resolve(); });
 
 		return d.promise;
 	},
@@ -122,6 +116,4 @@ suite = {
 	}
 };
 
-module.exports = function (paths, options) {
-	return Object.create(suite).init(paths, options);
-};
+module.exports = function (paths, options) { return Object.create(suite).init(paths, options); };
