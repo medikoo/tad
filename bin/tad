@@ -55,8 +55,8 @@ deferred
 		return initSuite(flatten.call(paths), argv)(function (suite) {
 			var suiteConsole = suite.console;
 			process.on("exit", function () {
-				if (suiteConsole.errored) process.exitCode = 2;
-				else if (suiteConsole.failed) process.exitCode = 1;
+				if (suiteConsole.errored) process.exit(2);
+				else if (suiteConsole.failed) process.exit(1);
 			});
 		});
 	})
