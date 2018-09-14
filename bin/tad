@@ -17,27 +17,27 @@ var compact  = require("es5-ext/array/#/compact")
 		.describe("a", "Display all tests names, including passed")
 		.describe("m", "Minimise output, verbose only for fails or errors").argv;
 
-var extname = path.extname
-  , resolve = path.resolve
-  , suite   = require("../");
+var extname   = path.extname
+  , resolve   = path.resolve
+  , initSuite = require("..");
 
 if (!argv._.length) argv._ = ["."];
 
 require("../lib/tad-ignore-mode");
 
 deferred
-	.map(argv._, function (path) {
-		if (path !== ".") return path;
-		path = resolve(".");
-		return findRoot(resolve(path, "x"))(function (root) {
-			if (root !== path) return path;
-			return readdir(path, {
+	.map(argv._, function (inputPath) {
+		if (inputPath !== ".") return inputPath;
+		inputPath = resolve(".");
+		return findRoot(resolve(inputPath, "x"))(function (root) {
+			if (root !== inputPath) return inputPath;
+			return readdir(inputPath, {
 				type: { file: true, directory: true },
 				ignoreRules: ["git", "tad"]
 			})
 				.map(function (name) {
-					var filename = resolve(path, name);
-					return stat(resolve(path, name))(function (stats) {
+					var filename = resolve(inputPath, name);
+					return stat(resolve(inputPath, name))(function (stats) {
 						if (stats.isDirectory()) {
 							if (name === "node_modules") return null;
 							if (name === "bin") return null;
@@ -52,11 +52,11 @@ deferred
 				.invoke(compact);
 		});
 	})(function (paths) {
-		return suite(flatten.call(paths), argv)(function (suite) {
-			var c = suite.console;
+		return initSuite(flatten.call(paths), argv)(function (suite) {
+			var suiteConsole = suite.console;
 			process.on("exit", function () {
-				if (c.errored) process.exitCode = 2;
-				else if (c.failed) process.exitCode = 1;
+				if (suiteConsole.errored) process.exitCode = 2;
+				else if (suiteConsole.failed) process.exitCode = 1;
 			});
 		});
 	})
