@@ -41,7 +41,6 @@ suite = {
 		return d.promise;
 	},
 	ondata: function () { this.tail = this.tail(spread.call(this.process).bind(this, arguments)); },
-	// eslint-disable-next-line max-statements
 	process: function (modulePath, fpath, tpath, context) {
 		var pname = modulePath.slice(this.rindex), fname, logger, testModuleConfig, d;
 		d = deferred();

@@ -42,6 +42,10 @@
     "root": true,
     "env": {
       "node": true
+    },
+    "rules": {
+      "max-lines-per-function": "off",
+      "max-statements": "off"
     }
   },
   "scripts": {
