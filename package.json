@@ -23,9 +23,9 @@
   "dependencies": {
     "cli-color": "~1.4",
     "d": "1",
-    "deferred": "~0.7.9",
-    "duration": "~0.2.1",
-    "es5-ext": "~0.10.46",
+    "deferred": "~0.7.10",
+    "duration": "~0.2.2",
+    "es5-ext": "~0.10.47",
     "event-emitter": "~0.3.5",
     "fs2": "~0.2.9",
     "next": "~0.4.1",
@@ -34,7 +34,7 @@
     "test": "0.6"
   },
   "devDependencies": {
-    "eslint": "^5.5",
+    "eslint": "^5.14.1",
     "eslint-config-medikoo-es5": "^1.7"
   },
   "eslintConfig": {
