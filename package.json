@@ -1,56 +1,56 @@
 {
-  "name": "tad",
-  "version": "0.2.8",
-  "description": "JavaScript test suite",
-  "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
-  "keywords": [
-    "test",
-    "factory",
-    "unit",
-    "unittest",
-    "runner",
-    "tests",
-    "tdd",
-    "testing"
-  ],
-  "bin": {
-    "tad": "./bin/tad"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/medikoo/tad.git"
-  },
-  "dependencies": {
-    "cli-color": "~1.4",
-    "d": "1",
-    "deferred": "~0.7.10",
-    "duration": "~0.2.2",
-    "es5-ext": "~0.10.47",
-    "event-emitter": "~0.3.5",
-    "fs2": "~0.2.9",
-    "next": "~0.4.1",
-    "optimist": "~0.6.1",
-    "path2": "0.1",
-    "test": "0.6"
-  },
-  "devDependencies": {
-    "eslint": "^5.14.1",
-    "eslint-config-medikoo-es5": "^1.7"
-  },
-  "eslintConfig": {
-    "extends": "medikoo-es5",
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "rules": {
-      "max-lines-per-function": "off",
-      "max-statements": "off"
-    }
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "test": "node ./bin/tad"
-  },
-  "license": "ISC"
+	"name": "tad",
+	"version": "0.2.8",
+	"description": "JavaScript test suite",
+	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+	"keywords": [
+		"test",
+		"factory",
+		"unit",
+		"unittest",
+		"runner",
+		"tests",
+		"tdd",
+		"testing"
+	],
+	"bin": {
+		"tad": "./bin/tad"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/medikoo/tad.git"
+	},
+	"dependencies": {
+		"cli-color": "~1.4",
+		"d": "1",
+		"deferred": "~0.7.10",
+		"duration": "~0.2.2",
+		"es5-ext": "~0.10.47",
+		"event-emitter": "~0.3.5",
+		"fs2": "~0.2.9",
+		"next": "~0.4.1",
+		"optimist": "~0.6.1",
+		"path2": "0.1",
+		"test": "0.6"
+	},
+	"devDependencies": {
+		"eslint": "^5.14.1",
+		"eslint-config-medikoo-es5": "^1.7"
+	},
+	"eslintConfig": {
+		"extends": "medikoo-es5",
+		"root": true,
+		"env": {
+			"node": true
+		},
+		"rules": {
+			"max-lines-per-function": "off",
+			"max-statements": "off"
+		}
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"test": "node ./bin/tad"
+	},
+	"license": "ISC"
 }
