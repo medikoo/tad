@@ -14,7 +14,7 @@
 		"testing"
 	],
 	"bin": {
-		"tad": "./bin/tad"
+		"tad": "./bin/tad.js"
 	},
 	"repository": {
 		"type": "git",
