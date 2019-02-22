@@ -1,6 +1,6 @@
 {
 	"name": "tad",
-	"version": "0.2.8",
+	"version": "1.0.0",
 	"description": "JavaScript test suite",
 	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
 	"keywords": [
