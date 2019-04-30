@@ -21,7 +21,7 @@
 		"url": "git://github.com/medikoo/tad.git"
 	},
 	"dependencies": {
-		"cli-color": "~1.4.0",
+		"cli-color": "^1.4.0",
 		"d": "^1.0.0",
 		"deferred": "^0.7.10",
 		"duration": "^0.2.2",
