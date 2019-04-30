@@ -21,25 +21,25 @@
 		"url": "git://github.com/medikoo/tad.git"
 	},
 	"dependencies": {
-		"cli-color": "~1.4",
-		"d": "1",
-		"deferred": "~0.7.10",
-		"duration": "~0.2.2",
-		"es5-ext": "~0.10.47",
-		"event-emitter": "~0.3.5",
-		"fs2": "~0.2.9",
-		"next": "~0.4.1",
-		"optimist": "~0.6.1",
-		"path2": "0.1",
-		"test": "0.6"
+		"cli-color": "~1.4.0",
+		"d": "^1.0.0",
+		"deferred": "^0.7.10",
+		"duration": "^0.2.2",
+		"es5-ext": "^0.10.49",
+		"event-emitter": "^0.3.5",
+		"fs2": "^0.2.21",
+		"next": "^0.4.1",
+		"optimist": "^0.6.1",
+		"path2": "^0.1.0",
+		"test": "^0.6.0"
 	},
 	"devDependencies": {
-		"eslint": "^5.14.1",
+		"eslint": "^5.16.0",
 		"eslint-config-medikoo-es5": "^2.0.0",
 		"git-list-updated": "^1.1.2",
 		"husky": "^1.3.1",
-		"lint-staged": "^8.1.3",
-		"prettier-elastic": "^1.16.4"
+		"lint-staged": "^8.1.5",
+		"prettier-elastic": "^1.17.0"
 	},
 	"husky": {
 		"hooks": {
