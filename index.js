@@ -1,3 +1,5 @@
+/* eslint max-lines: "off" */
+
 "use strict";
 
 var spread       = require("es5-ext/function/#/spread")
@@ -91,6 +93,15 @@ suite = {
 		logger.on(
 			"data",
 			function (testResult) {
+				if (d.resolved) {
+					var error = new Error(
+						"Unexpected state: Assertions are issued after suite finalized test run"
+					);
+					// Create error in test context (to expose proper stack trace)
+					// Throw in other context to avoid catch clause
+					process.nextTick(function () { throw error; });
+					return;
+				}
 				var name = [fname].concat(testResult.msg);
 				if (testResult.type === "pass") {
 					name.push(testResult.data);
