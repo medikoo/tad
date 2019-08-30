@@ -17,7 +17,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 - Due to implied thenable support. Objects which have `then`
   method, and are result of test functions, are no longer processed
-  as furhter test dictionaries but instead are processed as promises
+  further as test dictionaries but instead are processed as promises
 
 ## [2.0.1](https://github.com/medikoo/tad/compare/v2.0.0...v2.0.1) (2019-04-30)
 
