@@ -1,6 +1,23 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [3.0.0](https://github.com/medikoo/tad/compare/v2.0.1...v3.0.0) (2019-08-30)
+
+### Bug Fixes
+
+- Recognize signatures of async and arrow functions ([7817b0a](https://github.com/medikoo/tad/commit/7817b0a))
+
+### Features
+
+- Ensure to expose unhandled rejections as crashes ([619dfab](https://github.com/medikoo/tad/commit/619dfab))
+- Support thenable test returns ([ad83077](https://github.com/medikoo/tad/commit/ad83077))
+
+### BREAKING CHANGES
+
+- Due to implied thenable support. Objects which have `then`
+  method, and are result of test functions, are no longer processed
+  as furhter test dictionaries but instead are processed as promises
 
 ## [2.0.1](https://github.com/medikoo/tad/compare/v2.0.0...v2.0.1) (2019-04-30)
 
