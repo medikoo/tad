@@ -1,5 +1,3 @@
 "use strict";
 
-module.exports = function (a, d) {
-
-};
+module.exports = function (a, d) {};

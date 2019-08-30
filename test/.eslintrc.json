@@ -1,6 +1,1 @@
-{
-  "rules": {
-    "id-length": "off",
-    "no-shadow": "off"
-  }
-}
+{ "rules": { "id-length": "off", "no-shadow": "off" } }

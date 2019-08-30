@@ -4,9 +4,7 @@ var pg = require("path").resolve(__dirname, "../__playground");
 
 module.exports = {
 	Default: function (t, a, d) {
-		t("ignore", pg + "/test/module.js")(function (context) {
-			a(context, global);
-		}).done(d);
+		t("ignore", pg + "/test/module.js")(function (context) { a(context, global); }).done(d);
 	},
 	Custom: {
 		"": function (t, a, d) {

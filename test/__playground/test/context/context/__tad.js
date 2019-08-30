@@ -1,5 +1,3 @@
 "use strict";
 
-exports.context = function (lpath) {
-	return lpath;
-};
+exports.context = function (lpath) { return lpath; };

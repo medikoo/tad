@@ -2,8 +2,7 @@
 
 var oForEach       = require("es5-ext/object/for-each")
   , AssertionError = require("test/assert").AssertionError
-
-  , n4 = process.version.indexOf("v0.4") === 0;
+  , n4             = process.version.indexOf("v0.4") === 0;
 
 module.exports = function (t, a) {
 	if (!n4) {
@@ -12,12 +11,8 @@ module.exports = function (t, a) {
 	var outorg, errorg, outl = "", errl = "", console, results = {};
 	outorg = process.stdout._writeOut;
 	errorg = process.stderr._writeOut;
-	process.stdout._writeOut = function (data) {
-		outl += data;
-	};
-	process.stderr._writeOut = function (data) {
-		errl += data;
-	};
+	process.stdout._writeOut = function (data) { outl += data; };
+	process.stderr._writeOut = function (data) { errl += data; };
 
 	console = t({});
 
@@ -31,12 +26,10 @@ module.exports = function (t, a) {
 	results["Second Pass lines"] = [outl.split("\n").length, 1];
 	outl = "";
 
-	console.fail("foo", "bar", new AssertionError({
-		message: "foo",
-		actual: "foo",
-		expected: "foo",
-		operator: "foo"
-	}));
+	console.fail(
+		"foo", "bar",
+		new AssertionError({ message: "foo", actual: "foo", expected: "foo", operator: "foo" })
+	);
 	results["Fail content"] = [outl.length > 0];
 	results["Fail lines"] = [outl.split("\n").length, 6];
 	outl = "";
@@ -51,10 +44,7 @@ module.exports = function (t, a) {
 	results["Fail error  lines"] = [outl.split("\n").length > 4];
 	outl = "";
 
-	console.fail("foo", "bar", new AssertionError({
-		message: "foo",
-		operator: "throws"
-	}));
+	console.fail("foo", "bar", new AssertionError({ message: "foo", operator: "throws" }));
 	results["Fail throws content"] = [outl.length > 0];
 	results["Fail throws lines"] = [outl.split("\n").length, 3];
 	outl = "";

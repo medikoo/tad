@@ -7,9 +7,7 @@ module.exports = function (t, a, d) {
 	var logger, data, paths = [pg + "module.js", "/wrong/path", pg + "dir"];
 	logger = t(paths);
 	data = [];
-	logger("data", function () {
-		data.push(arguments);
-	});
+	logger("data", function () { data.push(arguments); });
 	logger("end", function () {
 		d({
 			"File": function (t, a, d) {
@@ -17,9 +15,7 @@ module.exports = function (t, a, d) {
 				a(o[0], paths[0], "Path");
 				a(o[1], paths[0], "File");
 				a(o[3], global, "Context");
-				findTestPath(o[1])(function (p) {
-					a(p, o[2], "Test path");
-				}).done(d);
+				findTestPath(o[1])(function (p) { a(p, o[2], "Test path"); }).done(d);
 			},
 			"Wrong path": function () {
 				var o = data[1];
@@ -34,17 +30,13 @@ module.exports = function (t, a, d) {
 						// Console.log(o);
 						a(o[0], paths[2], "Path");
 						a(o[3], global, "Context");
-						findTestPath(o[1])(function (p) {
-							a(p, o[2], "Test path");
-						}).done(d);
+						findTestPath(o[1])(function (p) { a(p, o[2], "Test path"); }).done(d);
 					},
 					"File #2": function (t, a, d) {
 						var o = data[5];
 						a(o[0], paths[2], "Path");
 						a(o[3], global, "Context");
-						findTestPath(o[1])(function (p) {
-							a(p, o[2], "Test path");
-						}).done(d);
+						findTestPath(o[1])(function (p) { a(p, o[2], "Test path"); }).done(d);
 					}
 				};
 			}

@@ -17,12 +17,8 @@ module.exports = function (t, a, d) {
 	process.stderr._writeOut = noop;
 
 	t([
-		"/wrong/path",
-		pg + "/lib/context-error/module.js",
-		pg + "/lib/evaluation-error.js",
-		pg + "/lib/test-evaluation-error.js",
-		pg + "/lib/no-tests.js",
-		pg + "/lib/module.js"
+		"/wrong/path", pg + "/lib/context-error/module.js", pg + "/lib/evaluation-error.js",
+		pg + "/lib/test-evaluation-error.js", pg + "/lib/no-tests.js", pg + "/lib/module.js"
 	])(
 		function () {
 			process.stdout._writeOut = outorg;

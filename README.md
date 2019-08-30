@@ -7,20 +7,19 @@ Example console output:
 
 <img src="http://medyk.org/tad.png" border="0" width="718" height="370" />
 
-* [Installation](#installation)
-* [Usage](#usage)
-	* [File managment](#usage-file-management)
-	* [Test files](#usage-test-files)
-	* [Test functions](#usage-test-functions)
-	* [Assertions](#usage-assertions)
-	* [Running tests](#usage-running-tests)
-* [TODO](#todo)
+- [Installation](#installation)
+- [Usage](#usage)
+  _ [File managment](#usage-file-management)
+  _ [Test files](#usage-test-files)
+  _ [Test functions](#usage-test-functions)
+  _ [Assertions](#usage-assertions) \* [Running tests](#usage-running-tests)
+- [TODO](#todo)
 
 <a name="installation" />
 
 ## Installation
 
-	$ npm install tad
+    $ npm install tad
 
 <a name="usage" />
 
@@ -38,37 +37,42 @@ _test_ folder.
 ### Test files
 
 Tests should be written as set of functions, it can be just one function:
+
 ```js
 module.exports = function (t, a, d) {
-	// tests
+  // tests
 };
 ```
+
 or many thematically grouped functions:
+
 ```js
 exports["Test this"] = function (t, a, d) {
-	// tests
+  // tests
 };
 exports["Test that"] = function (t, a, d) {
-	// tests
+  // tests
 };
 ```
+
 <a name="usage-test-functions" />
 
 ### Test functions
 
 Arguments passed to test functions are:
 
-* __t__ - Tested module
-* __a__ - Assert object
-* __d__ - _Done_ function, it's for tests that need to be run asynchronously.
-You may pass additional block of tests to this
-function and they'll be run right after. _d_ argument makes no sense for
-synchrounous tests, declare such tests without it.
+- **t** - Tested module
+- **a** - Assert object
+- **d** - _Done_ function, it's for tests that need to be run asynchronously.
+  You may pass additional block of tests to this
+  function and they'll be run right after. _d_ argument makes no sense for
+  synchrounous tests, declare such tests without it.
 
 All arguments are optional, and by the way function is declared suite detect
 which arguments should be passed to test function. Examples:
 
-* Asynchronous test:
+- Asynchronous test:
+
 ```js
 exports["Some tests"] = funtcion (t, a, d) {
 		// tests
@@ -78,60 +82,67 @@ exports["Some tests"] = funtcion (t, a, d) {
 		}, 100);
 };
 ```
-* Synchronous test:
+
+- Synchronous test:
+
 ```js
 exports["Some tests"] = function (t, a) {
-	// tests
+  // tests
 };
 ```
+
 Tests can be nested, and declared various ways (synchronous/asynchronous)
+
 ```js
 module.exports["Test all"] = function (t, a) {
-	// Preparation code
+  // Preparation code
 
-	// ... tests ...
+  // ... tests ...
 
-	return {
-		"Test this": function () {
-			// We already have module and assert object
-			// ... tests ...
-		},
-		"Test that async way": function (d) {
-			// This one is asynchronous
-			// ... tests ....
+  return {
+    "Test this": function () {
+      // We already have module and assert object
+      // ... tests ...
+    },
+    "Test that async way": function (d) {
+      // This one is asynchronous
+      // ... tests ....
 
-			seTimeout(function () {
-				// ... tests ...
-				d({
-					"Some extra tests": function () {
-							// ... tests ...
-					}
-				})
-			}, 100);
-		}
-	};
+      seTimeout(function () {
+        // ... tests ...
+        d({
+          "Some extra tests": function () {
+            // ... tests ...
+          }
+        });
+      }, 100);
+    }
+  };
 };
 ```
+
 <a name="usage-assertions" />
 
 ### Assertions
 
 TAD uses assert object from [UncommonJS tests runner](https://github.com/Gozala/test-commonjs/),
-It's API is nearly same as of _assert_ that can be found in Node. Full spec is available at 
+It's API is nearly same as of _assert_ that can be found in Node. Full spec is available at
 https://github.com/kriskowal/uncommonjs/blob/master/tests/specification.md .
 
 TAD adds some extra sugar to UncommonJS Assert object:
 
-* `a === a.strictEqual`, so you can write your assertions as:
+- `a === a.strictEqual`, so you can write your assertions as:
+
 ```js
 a(shouldBeTrue, true, "It's true");
 // it has same effect as:
 a.strictEqual(shouldBeTrue, true, "It's true");
 ```
-* `a.not` is an alias for `a.notStrictEqual`
-* `a.deep` is an alias for `a.deepEqual`
-* `a.notDeep` is an alias for `a.notDeepEqual`
-* `assert.never` with that you can check function paths that should never be called.
+
+- `a.not` is an alias for `a.notStrictEqual`
+- `a.deep` is an alias for `a.deepEqual`
+- `a.notDeep` is an alias for `a.notDeepEqual`
+- `assert.never` with that you can check function paths that should never be called.
 
 <a name="usage-running-tests" />
 
@@ -139,18 +150,18 @@ a.strictEqual(shouldBeTrue, true, "It's true");
 
 Test your file with provided binary:
 
-	$ bin/tad lib/test-file
+    $ bin/tad lib/test-file
 
 or test all files in path:
 
-	$ bin/tad lib
+    $ bin/tad lib
 
 <a name="todo" />
 
 ## TODO
 
-* Full custom context support
-* Code coverage
-* TAP support
-* jslint, jshint as side validation option
-* Port tests to browsers
+- Full custom context support
+- Code coverage
+- TAP support
+- jslint, jshint as side validation option
+- Port tests to browsers
