@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### BREAKING CHANGES
 
+- Drop support for Node.js versions lower than v0.11.8
 - Due to implied thenable support. Objects which have `then`
   method, and are result of test functions, are no longer processed
   further as test dictionaries but instead are processed as promises
