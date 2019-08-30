@@ -26,6 +26,7 @@
 		"deferred": "^0.7.11",
 		"duration": "^0.2.2",
 		"es5-ext": "^0.10.50",
+		"essentials": "^1.0.0",
 		"event-emitter": "^0.3.5",
 		"fs2": "^0.2.21",
 		"memoizee": "^0.4.14",

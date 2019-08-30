@@ -2,7 +2,7 @@
 
 "use strict";
 
-Error.stackTraceLimit = Infinity;
+require("essentials");
 
 var compact  = require("es5-ext/array/#/compact")
   , flatten  = require("es5-ext/array/#/flatten")
