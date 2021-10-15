@@ -6,6 +6,7 @@ require("essentials");
 
 var compact  = require("es5-ext/array/#/compact")
   , flatten  = require("es5-ext/array/#/flatten")
+  , endsWith = require("es5-ext/string/#/ends-with")
   , deferred = require("deferred")
   , path     = require("path")
   , findRoot = require("next/module/find-package-root")
@@ -45,9 +46,10 @@ deferred
 							if (name === "examples") return null;
 							return filename;
 						}
+						if (extname(name) !== ".js") return null;
 						if (name[0] === ".") return null;
-						if (extname(name) === ".js") return filename;
-						return null;
+						if (endsWith.call(name, ".config.js")) return null;
+						return filename;
 					});
 				})
 				.invoke(compact);
