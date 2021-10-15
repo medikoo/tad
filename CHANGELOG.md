@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/medikoo/tad/compare/v3.0.1...v3.1.0) (2021-10-15)
+
+### Features
+
+- Ignore `*.config.js` files when auto-indexing ([1d9ddf2](https://github.com/medikoo/tad/commit/1d9ddf288e8998dc75235647acf046d9e7ea7650))
+
+### Maintenance Improvements
+
+- Upgrade `cli-color` to v2 ([a087ea0](https://github.com/medikoo/tad/commit/a087ea0e89d47b912d99990e6b7e0b56891f7b0e))
+- Upgrade `ncjsm` to v4 ([6beead0](https://github.com/medikoo/tad/commit/6beead03f33f5008d27d7f9a58a16dc92be4d563))
+
 ### [3.0.1](https://github.com/medikoo/tad/compare/v3.0.0...v3.0.1) (2019-08-30)
 
 ### Bug Fixes
