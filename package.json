@@ -37,8 +37,8 @@
 		"test": "^0.6.0"
 	},
 	"devDependencies": {
-		"eslint": "^6.2.2",
-		"eslint-config-medikoo": "^2.5.1",
+		"eslint": "^8.0.1",
+		"eslint-config-medikoo": "^4.1.1",
 		"git-list-updated": "^1.2.1",
 		"husky": "^3.0.4",
 		"lint-staged": "^9.2.5",
@@ -58,11 +58,8 @@
 		]
 	},
 	"eslintConfig": {
-		"extends": "medikoo/es5",
-		"root": true,
-		"env": {
-			"node": true
-		}
+		"extends": "medikoo/node/es5",
+		"root": true
 	},
 	"prettier": {
 		"printWidth": 100,
