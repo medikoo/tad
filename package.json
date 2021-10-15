@@ -43,7 +43,8 @@
 		"git-list-updated": "^1.2.1",
 		"husky": "^4.3.8",
 		"lint-staged": "^11.2.3",
-		"prettier-elastic": "^2.2.1"
+		"prettier-elastic": "^2.2.1",
+		"standard-version": "^9.3.1"
 	},
 	"husky": {
 		"hooks": {
@@ -78,10 +79,39 @@
 			}
 		]
 	},
+	"standard-version": {
+		"skip": {
+			"commit": true,
+			"tag": true
+		},
+		"types": [
+			{
+				"type": "feat",
+				"section": "Features"
+			},
+			{
+				"type": "fix",
+				"section": "Bug Fixes"
+			},
+			{
+				"type": "perf",
+				"section": "Performance Improvements"
+			},
+			{
+				"type": "refactor",
+				"section": "Maintenance Improvements"
+			},
+			{
+				"type": "chore",
+				"section": "Maintenance Improvements"
+			}
+		]
+	},
 	"scripts": {
 		"commitlint": "commitlint -f HEAD@{15}",
 		"lint": "eslint .",
 		"lint-updated": "pipe-git-updated --ext=js -- eslint --ignore-pattern '!*'",
+		"prepare-release": "standard-version && prettier --write CHANGELOG.md",
 		"prettier-check-updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier -c",
 		"prettify": "prettier --write --ignore-path .gitignore '**/*.{css,html,js,json,md,yaml,yml}'",
 		"test": "node ./bin/tad"
