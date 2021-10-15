@@ -53,7 +53,9 @@ deferred
 				.invoke(compact);
 		});
 	})(function (paths) {
-		return initSuite(flatten.call(paths), argv)(function (suite) {
+		return initSuite(
+			flatten.call(paths), argv
+		)(function (suite) {
 			var suiteConsole = suite.console;
 			process.on("exit", function () {
 				if (suiteConsole.errored) process.exitCode = 2;
