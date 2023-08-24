@@ -80,34 +80,6 @@
 			}
 		]
 	},
-	"standard-version": {
-		"skip": {
-			"commit": true,
-			"tag": true
-		},
-		"types": [
-			{
-				"type": "feat",
-				"section": "Features"
-			},
-			{
-				"type": "fix",
-				"section": "Bug Fixes"
-			},
-			{
-				"type": "perf",
-				"section": "Performance Improvements"
-			},
-			{
-				"type": "refactor",
-				"section": "Maintenance Improvements"
-			},
-			{
-				"type": "chore",
-				"section": "Maintenance Improvements"
-			}
-		]
-	},
 	"scripts": {
 		"commitlint": "commitlint -f HEAD@{15}",
 		"lint": "eslint --ignore-path=.gitignore .",
