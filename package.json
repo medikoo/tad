@@ -16,10 +16,7 @@
 	"bin": {
 		"tad": "./bin/tad.js"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/medikoo/tad.git"
-	},
+	"repository": "medikoo/tad",
 	"dependencies": {
 		"cli-color": "^2.0.3",
 		"d": "^1.0.1",
