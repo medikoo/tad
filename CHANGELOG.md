@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.1](https://github.com/medikoo/tad/compare/v3.1.0...v3.1.1) (2023-08-24)
+
+### Bug Fixes
+
+- Ensure to support test functions configured as object methods ([4972a8b](https://github.com/medikoo/tad/commit/4972a8bde8b5022be0888f847bebda3301ea23a5))
+
 ## [3.1.0](https://github.com/medikoo/tad/compare/v3.0.1...v3.1.0) (2021-10-15)
 
 ### Features
